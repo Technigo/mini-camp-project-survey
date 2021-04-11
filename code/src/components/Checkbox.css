@@ -1,0 +1,30 @@
+.checkbox-group {
+  cursor: pointer;
+  margin: auto;
+}
+.checkbox-group.list {
+  text-align: left;
+  display: grid;
+}
+.checkbox-group.list .checkbox-label {
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+.checkbox-label {
+  cursor: pointer;
+}
+.checkbox-label span {
+  margin-right: 10px;
+}
+.checkbox-label .input-checkbox {
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 0;
+}
+.input-checkbox:checked + span {
+  color: #000;
+}
+.checkbox-label:hover {
+  color: #000;
+}

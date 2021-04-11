@@ -1,0 +1,26 @@
+.input {
+  background-color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  color: #333333;
+  border: 1px solid #999;
+  padding: 6px;
+  padding-left: 10px;
+  border-style: solid;
+  border-radius: 5px;
+  height: 36px;
+  margin: auto;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.input:disabled {
+  opacity: 0.4;
+}
+.input:hover:not(:disabled),
+.input:focus {
+  border: 1px solid #555;
+  outline: none;
+}
+.input::placeholder {
+  color: #ccc;
+}

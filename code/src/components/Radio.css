@@ -1,0 +1,30 @@
+.radio-group {
+  cursor: pointer;
+  margin: auto;
+}
+.radio-group.list {
+  text-align: left;
+  display: grid;
+}
+.radio-group.list .radio-label {
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+.radio-label {
+  cursor: pointer;
+}
+.radio-label span {
+  margin-right: 10px;
+}
+.radio-label .input-radio {
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 0;
+}
+.input-radio:checked + span {
+  color: #000;
+}
+.radio-label:hover {
+  color: #000;
+}

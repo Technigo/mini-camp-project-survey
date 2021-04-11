@@ -1,0 +1,56 @@
+{
+  "questions": {
+    "question": [
+      {
+        "question_id": 1,
+        "question_text": "What is your name?",
+        "question_type": "input"
+      },
+      {
+        "question_id": 2,
+        "question_text": "What is your experience level (0-3)",
+        "question_type": "radio",
+        "style": "list",
+        "answer_options": {
+          "answer_option": [
+            {
+              "answer_id": 1,
+              "name": "list",
+              "label": "I'm bad, really bad. 😥"
+            },
+            {
+              "answer_id": 2,
+              "name": "list",
+              "label": "Guess I'm okay 😊"
+            },
+            {
+              "answer_id": 3,
+              "name": "list",
+              "label": "I'm awesome! 😎"
+            }
+          ]
+        }
+      },
+      {
+        "question_id": 3,
+        "question_text": "How would you rate this?",
+        "question_type": "checkbox",
+        "style": "row",
+        "answer_options": {
+          "answer_option": [
+            {
+              "answer_id": 1,
+              "name": "bad",
+              "label": "Bad"
+            },
+            {
+              "answer_id": 2,
+              "name": "awesome",
+              "label": "Awesome"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
