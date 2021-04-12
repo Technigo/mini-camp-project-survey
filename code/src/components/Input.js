@@ -4,13 +4,18 @@ import './Input.css';
 
 const Input = ({ value, type, placeholder, styleClass, isDisabled }) => {
   const [inputValue, setInput] = useState(value);
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    setInput(e.target.value);
+    // updateReply({ ...replyQuestions, [e.target.name]: e.target.checked });
+  }
   return (
     <input
       type={type}
       className={`input ${styleClass}`}
       value={inputValue}
       placeholder={placeholder}
-      onChange={(e) => setInput(e.target.value)}
+      onChange={handleChange}
       disabled={isDisabled} />
   );
 };

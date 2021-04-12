@@ -6,14 +6,16 @@ import Card from './components/Card';
 import './index.css';
 
 export const App = () => {
-  /* eslint-disable no-unused-vars */
-  const [currentQuestion, setQuestion] = useState(0);
-  /* eslint-enable no-unused-vars */
-  console.log(currentQuestion)
+  const [currentQuestion, updateQuestion] = useState(
+    data.questions.question.filter((item) => item.question_id === 1)
+  );
+  const [replyQuestions, updateReplyQuestions] = useState([]);
+
+  console.log(replyQuestions);
 
   return (
     <div className="App">
-      {data.questions.question.map((question) => {
+      {currentQuestion.map((question) => {
         return (
           <Card
             key={question.question_id}
@@ -21,7 +23,10 @@ export const App = () => {
             question={question.question_text}
             questionType={question.question_type}
             answerOptions={question.answer_options}
-            styleClass={question.style} />
+            styleClass={question.style}
+            replyQuestions={replyQuestions}
+            updateQuestion={updateQuestion}
+            updateReply={updateReplyQuestions} />
         );
       })}
     </div>
