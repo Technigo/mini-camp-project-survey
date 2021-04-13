@@ -8,8 +8,8 @@ import Button from './components/Button';
 import './index.css';
 
 export const App = () => {
-  const [replyQuestions, updateReplyQuestions] = useState([]);
-  function removeDuplicates(array) {
+  const [reply, updateReply] = useState([]);
+  /* function removeDuplicates(array) {
     console.log('remove duplicates');
     array = new Set(array);
     array.forEach((point) => {
@@ -18,13 +18,13 @@ export const App = () => {
       }
     });
     return array;
-  }
+  } */
   function handleSubmit(e) {
     e.preventDefault();
     console.log('submit');
     console.log(`Total questions: ${data.questions.length}`);
-    console.log(replyQuestions);
-    console.log(removeDuplicates(replyQuestions));
+    console.log(reply);
+    // console.log(removeDuplicates(reply));
   }
   return (
     <div className="App">
@@ -38,8 +38,8 @@ export const App = () => {
               questionType={question.question_type}
               answerOptions={question.answer_options}
               styleClass={question.style}
-              replyQuestions={replyQuestions}
-              updateReply={updateReplyQuestions} />
+              reply={reply}
+              updateReply={updateReply} />
           );
         })}
         <Button

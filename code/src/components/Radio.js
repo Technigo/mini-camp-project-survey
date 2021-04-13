@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import './Radio.css';
 
-const Radio = ({ questionID, data, styleClass, replyQuestions, updateReply }) => {
+const Radio = ({ questionID, data, styleClass, reply, updateReply }) => {
   const [radio, setRadio] = useState(0);
   const handleChange = (label, id) => {
     setRadio(id);
     updateReply([
-      ...replyQuestions,
+      ...reply,
       {
         id: questionID,
         value: label

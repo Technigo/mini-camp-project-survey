@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import './Checkbox.css';
 
-const Checkbox = ({ questionID, data, styleClass, replyQuestions, updateReply }) => {
+const Checkbox = ({ questionID, data, styleClass, reply, updateReply }) => {
   const [checkedCheckboxes, setCheckbox] = useState({});
   const handleChange = (e) => {
     setCheckbox({ ...checkedCheckboxes, [e.target.name]: e.target.checked });
     updateReply([
-      ...replyQuestions,
+      ...reply,
       {
         id: questionID,
         value: e.target.name

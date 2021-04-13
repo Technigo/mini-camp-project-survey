@@ -10,13 +10,13 @@ const Input = ({
   styleClass,
   isDisabled,
   updateReply,
-  replyQuestions
+  reply
 }) => {
   const [inputValue, setInput] = useState(value);
   const handleChange = (e) => {
     setInput(e.target.value);
     updateReply([
-      ...replyQuestions,
+      ...reply,
       {
         id: questionID,
         value: e.target.value
