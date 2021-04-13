@@ -2,12 +2,26 @@ import React, { useState } from 'react';
 
 import './Input.css';
 
-const Input = ({ value, type, placeholder, styleClass, isDisabled }) => {
+const Input = ({
+  questionID,
+  value,
+  type,
+  placeholder,
+  styleClass,
+  isDisabled,
+  updateReply,
+  replyQuestions
+}) => {
   const [inputValue, setInput] = useState(value);
   const handleChange = (e) => {
-    console.log(e.target.value)
     setInput(e.target.value);
-    // updateReply({ ...replyQuestions, [e.target.name]: e.target.checked });
+    updateReply([
+      ...replyQuestions,
+      {
+        id: questionID,
+        value: e.target.value
+      }
+    ]);
   }
   return (
     <input

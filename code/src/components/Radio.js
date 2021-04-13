@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 
 import './Radio.css';
 
-const Radio = (props) => {
+const Radio = ({ questionID, data, styleClass, replyQuestions, updateReply }) => {
   const [radio, setRadio] = useState(0);
+  const handleChange = (label, id) => {
+    setRadio(id);
+    updateReply([
+      ...replyQuestions,
+      {
+        id: questionID,
+        value: label
+      }
+    ]);
+  };
   return (
-    <div className={`radio-group ${props.styleClass}`}>
-      {props.data.answer_option.map((item) => {
+    <div className={`radio-group ${styleClass}`}>
+      {data.map((item) => {
         return (
           <label className="radio-label" key={item.answer_id} htmlFor={item.answer_id}>
             <input
@@ -15,7 +25,7 @@ const Radio = (props) => {
               checked={radio === item.answer_id}
               name={item.name}
               id={item.answer_id}
-              onChange={() => setRadio(item.answer_id)} />
+              onChange={() => handleChange(item.label, item.answer_id)} />
             <span>{item.label}</span>
           </label>
         );

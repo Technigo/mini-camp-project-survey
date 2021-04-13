@@ -18,3 +18,7 @@ body {
   background: #FEF7E6;
   padding: 20px;
 }
+.App {
+  width: 80%;
+  margin: 0 auto;
+}

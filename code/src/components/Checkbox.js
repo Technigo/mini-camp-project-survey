@@ -2,14 +2,21 @@ import React, { useState } from 'react';
 
 import './Checkbox.css';
 
-const Checkbox = (props) => {
+const Checkbox = ({ questionID, data, styleClass, replyQuestions, updateReply }) => {
   const [checkedCheckboxes, setCheckbox] = useState({});
   const handleChange = (e) => {
     setCheckbox({ ...checkedCheckboxes, [e.target.name]: e.target.checked });
+    updateReply([
+      ...replyQuestions,
+      {
+        id: questionID,
+        value: e.target.name
+      }
+    ]);
   };
   return (
-    <div className={`checkbox-group ${props.styleClass}`}>
-      {props.data.answer_option.map((item) => {
+    <div className={`checkbox-group ${styleClass}`}>
+      {data.map((item) => {
         return (
           <label className="checkbox-label" key={item.answer_id} htmlFor={item.name}>
             <input
