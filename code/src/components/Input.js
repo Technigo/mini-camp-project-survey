@@ -9,19 +9,13 @@ const Input = ({
   placeholder,
   styleClass,
   isDisabled,
-  updateReply,
-  reply
+  isRequired,
+  updateReply
 }) => {
   const [inputValue, setInput] = useState(value);
   const handleChange = (e) => {
     setInput(e.target.value);
-    updateReply([
-      ...reply,
-      {
-        id: questionID,
-        value: e.target.value
-      }
-    ]);
+    updateReply(questionID, e.target.value);
   }
   return (
     <input
@@ -30,7 +24,8 @@ const Input = ({
       value={inputValue}
       placeholder={placeholder}
       onChange={handleChange}
-      disabled={isDisabled} />
+      disabled={isDisabled}
+      required={isRequired} />
   );
 };
 export default Input;

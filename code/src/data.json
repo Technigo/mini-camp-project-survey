@@ -2,9 +2,9 @@
   "questions": [
     {
       "question_id": 1,
-      "question_shortname": "Experience",
       "question_text": "How would you rate your experience level in React?",
       "question_type": "radio",
+      "isRequired": "required",
       "style": "list",
       "answer_options": [
         {
@@ -26,22 +26,22 @@
     },
     {
       "question_id": 2,
-      "question_shortname": "Weeks",
       "question_text": "How many weeks have you been on the course?",
-      "question_type": "input"
+      "question_type": "input",
+      "isRequired": "required"
     },
     {
       "question_id": 3,
-      "question_shortname": "Favourite",
       "question_text": "What have so far been your favourite thing about the course?",
-      "question_type": "input"
+      "question_type": "input",
+      "isRequired": "required"
     },
     {
       "question_id": 4,
-      "question_shortname": "Improve",
       "question_text": "Select one or multiple things that could be improved with the course",
       "question_type": "checkbox",
-      "style": "row",
+      "isRequired": "required",
+      "style": "list",
       "answer_options": [
         {
           "answer_id": 1,

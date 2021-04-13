@@ -2,20 +2,33 @@ import React, { useState } from 'react';
 
 import './Checkbox.css';
 
-const Checkbox = ({ questionID, data, styleClass, reply, updateReply }) => {
+const Checkbox = ({
+  questionID,
+  data,
+  styleClass,
+  isRequired,
+  updateReply
+}) => {
   const [checkedCheckboxes, setCheckbox] = useState({});
   const handleChange = (e) => {
-    setCheckbox({ ...checkedCheckboxes, [e.target.name]: e.target.checked });
-    updateReply([
-      ...reply,
+    setCheckbox(
       {
-        id: questionID,
-        value: e.target.name
+        ...checkedCheckboxes,
+        [e.target.name]:
+        e.target.checked
       }
-    ]);
+    );
+    updateReply(
+      questionID,
+      { checkboxValues: {
+        ...checkedCheckboxes,
+        [e.target.name]:
+        e.target.checked
+      } }
+    );
   };
   return (
-    <div className={`checkbox-group ${styleClass}`}>
+    <div className={`checkbox-group ${styleClass} ${isRequired}`}>
       {data.map((item) => {
         return (
           <label className="checkbox-label" key={item.answer_id} htmlFor={item.name}>

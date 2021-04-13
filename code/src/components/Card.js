@@ -14,6 +14,7 @@ const Card = ({
   questionType,
   answerOptions,
   styleClass,
+  isRequired,
   updateReply
 }) => {
   if (questionType === 'input') {
@@ -23,18 +24,21 @@ const Card = ({
       placeholder="Text"
       type="text"
       styleClass="primary"
+      isRequired={isRequired}
       updateReply={updateReply} />
   } else if (questionType === 'radio') {
     answers = <Radio
       questionID={questionID}
       data={answerOptions}
       styleClass={styleClass}
+      isRequired={isRequired}
       updateReply={updateReply} />
   } else if (questionType === 'checkbox') {
     answers = <Checkbox
       questionID={questionID}
       data={answerOptions}
       styleClass={styleClass}
+      isRequired={isRequired}
       updateReply={updateReply} />
   }
   return (
