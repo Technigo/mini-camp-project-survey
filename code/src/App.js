@@ -8,24 +8,35 @@ import Button from './components/Button';
 import './index.css';
 
 export const App = () => {
-  const [reply, updateReply] = useState([]);
-  /* function removeDuplicates(array) {
-    console.log('remove duplicates');
-    array = new Set(array);
-    array.forEach((point) => {
-      if (point.id === 1) {
-        array.delete(point);
-      }
-    });
-    return array;
-  } */
+  // const [reply, updateReply] = useState([]);
+  /* eslint-disable no-unused-vars */
+  const [replyExperience, updateExperience] = useState([]);
+  const [replyWeeks, updateWeeks] = useState([]);
+  const [replyFavourite, updateFavourite] = useState([]);
+  const [replyImprove, updateImprove] = useState([]);
+  /* eslint-enable no-unused-vars */
+
+  function storeReply(questionID, reply) {
+    if (questionID === 1) {
+      updateExperience(reply)
+    } else if (questionID === 2) {
+      updateWeeks(reply)
+    } else if (questionID === 3) {
+      updateFavourite(reply)
+    } else if (questionID === 4) {
+      updateImprove(reply)
+    }
+    console.log(reply);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log('submit');
     console.log(`Total questions: ${data.questions.length}`);
-    console.log(reply);
+    // console.log(reply);
     // console.log(removeDuplicates(reply));
   }
+  console.log(`update${data.questions[0].question_shortname}`);
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
@@ -38,8 +49,7 @@ export const App = () => {
               questionType={question.question_type}
               answerOptions={question.answer_options}
               styleClass={question.style}
-              reply={reply}
-              updateReply={updateReply} />
+              updateReply={(reply) => storeReply(question.question_id, reply)} />
           );
         })}
         <Button

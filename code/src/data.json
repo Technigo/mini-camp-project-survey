@@ -2,47 +2,76 @@
   "questions": [
     {
       "question_id": 1,
-      "question_text": "What is your name?",
-      "question_type": "input"
-    },
-    {
-      "question_id": 2,
-      "question_text": "What is your experience level (0-3)",
+      "question_shortname": "Experience",
+      "question_text": "How would you rate your experience level in React?",
       "question_type": "radio",
       "style": "list",
       "answer_options": [
         {
           "answer_id": 1,
-          "name": "name",
-          "label": "I'm bad, really bad."
+          "name": "experience",
+          "label": "Not very experienced"
         },
         {
           "answer_id": 2,
-          "name": "name",
+          "name": "I can google",
           "label": "Guess I'm okay."
         },
         {
           "answer_id": 3,
-          "name": "name",
-          "label": "I'm awesome!"
+          "name": "experience",
+          "label": "I’m feeling confident"
         }
       ]
     },
     {
+      "question_id": 2,
+      "question_shortname": "Weeks",
+      "question_text": "How many weeks have you been on the course?",
+      "question_type": "input"
+    },
+    {
       "question_id": 3,
-      "question_text": "How would you rate this?",
+      "question_shortname": "Favourite",
+      "question_text": "What have so far been your favourite thing about the course?",
+      "question_type": "input"
+    },
+    {
+      "question_id": 4,
+      "question_shortname": "Improve",
+      "question_text": "Select one or multiple things that could be improved with the course",
       "question_type": "checkbox",
       "style": "row",
       "answer_options": [
         {
           "answer_id": 1,
-          "name": "bad",
-          "label": "Bad"
+          "name": "introduction meeting",
+          "label": "Introduction meeting"
         },
         {
           "answer_id": 2,
-          "name": "awesome",
-          "label": "Awesome"
+          "name": "project brief",
+          "label": "Project brief"
+        },
+        {
+          "answer_id": 3,
+          "name": "1on1",
+          "label": "1on1"
+        },
+        {
+          "answer_id": 4,
+          "name": "q&a",
+          "label": "Q&A"
+        },
+        {
+          "answer_id": 5,
+          "name": "projects",
+          "label": "Projects"
+        },
+        {
+          "answer_id": 6,
+          "name": "weekly exercises",
+          "label": "Weekly Exercises"
         }
       ]
     }
