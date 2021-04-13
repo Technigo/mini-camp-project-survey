@@ -14,7 +14,7 @@ export const App = () => {
   const [replyFavourite, updateFavourite] = useState([]);
   const [replyImprove, updateImprove] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [survayOver, updateSurvayOver] = useState(false);
+  const [surveyOver, updateSurveyOver] = useState(false);
   /* eslint-enable no-unused-vars */
 
   function storeReply(questionID, reply) {
@@ -26,24 +26,21 @@ export const App = () => {
       updateFavourite(reply)
     } else if (questionID === 4) {
       updateImprove(reply)
-      // console.log(Object.keys(reply.checkboxValues))
     }
-    // console.log(`Reply Quesion ${questionID}:`);
-    // console.log(reply);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log('submit');
     console.log(`Total questions: ${data.questions.length}`);
-    updateSurvayOver(true);
+    updateSurveyOver(true);
   }
   function handleReset() {
     window.location.reload();
   }
   return (
     <div className="App">
-      {survayOver ? (
+      {surveyOver ? (
         <div className="summary">
           <h1>Summary</h1>
           <p>{replyExperience || null}</p>
