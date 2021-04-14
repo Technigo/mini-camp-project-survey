@@ -8,7 +8,7 @@ const Button = ({
   name,
   styleClass,
   isDisabled,
-  handleClickButton
+  onClick
 }) => {
   /* eslint-disable react/button-has-type */
   return (
@@ -18,7 +18,7 @@ const Button = ({
       name={name}
       className={`button ${styleClass}`}
       disabled={isDisabled}
-      onClick={handleClickButton}>
+      onClick={onClick}>
       {value}
     </button>
   );

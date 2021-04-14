@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import data from './data.json';
 import Card from './components/Card';
 import Button from './components/Button';
-// import Summary from './components/Summary';
 
 import './index.css';
 
@@ -13,10 +12,11 @@ export const App = () => {
   const [replyWeeks, updateWeeks] = useState([]);
   const [replyFavourite, updateFavourite] = useState([]);
   const [replyImprove, updateImprove] = useState([]);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [surveyOver, updateSurveyOver] = useState(false);
+  const [currentQuestion, updateCurrentQuestion] = useState(1);
+  const questionData = data.questions.filter((item) => item.question_id === currentQuestion);
+  const totalQuestions = data.questions.length;
   /* eslint-enable no-unused-vars */
-
   function storeReply(questionID, reply) {
     if (questionID === 1) {
       updateExperience(reply)
@@ -28,7 +28,6 @@ export const App = () => {
       updateImprove(reply)
     }
   }
-
   function handleSubmit(e) {
     e.preventDefault();
     console.log('submit');
@@ -56,11 +55,11 @@ export const App = () => {
             type="reset"
             name="reset-button"
             styleClass="primary"
-            handleClickButton={handleReset} />
+            onClick={handleReset} />
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          {data.questions.map((question) => {
+          {questionData.map((question) => {
             return (
               <Card
                 key={question.question_id}
@@ -70,14 +69,12 @@ export const App = () => {
                 answerOptions={question.answer_options}
                 styleClass={question.style}
                 isRequired={question.isRequired}
-                updateReply={storeReply} />
+                updateReply={storeReply}
+                totalQuestions={totalQuestions}
+                currentQuestion={currentQuestion}
+                updateCurrentQuestion={updateCurrentQuestion} />
             );
           })}
-          <Button
-            value="Submit"
-            type="submit"
-            name="continue-button"
-            styleClass="primary" />
         </form>
       )}
     </div>

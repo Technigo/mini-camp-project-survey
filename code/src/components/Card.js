@@ -3,6 +3,7 @@ import React from 'react';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
 import Input from './Input';
+import Button from './Button';
 
 import './Card.css';
 
@@ -15,8 +16,21 @@ const Card = ({
   answerOptions,
   styleClass,
   isRequired,
-  updateReply
+  updateReply,
+  totalQuestions,
+  currentQuestion,
+  updateCurrentQuestion
 }) => {
+  function handleContinue() {
+    console.log('Continue');
+    console.log(currentQuestion)
+    console.log(totalQuestions)
+    if (currentQuestion === totalQuestions) {
+      console.log('display summary');
+    } else {
+      updateCurrentQuestion(currentQuestion + 1);
+    }
+  }
   if (questionType === 'input') {
     answers = <Input
       questionID={questionID}
@@ -49,6 +63,9 @@ const Card = ({
       <div className="answers">
         {answers}
       </div>
+      {(currentQuestion === totalQuestions)
+        ? <Button value="Submit" type="submit" name="submit-button" styleClass="primary" />
+        : <Button value="Continue" type="continue" name="continue-button" styleClass="primary" onClick={handleContinue} />}
     </div>
   );
 };

@@ -22,6 +22,7 @@ const Input = ({
       type={type}
       className={`input ${styleClass}`}
       value={inputValue}
+      name={type}
       placeholder={placeholder}
       onChange={handleChange}
       disabled={isDisabled}
