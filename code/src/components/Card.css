@@ -1,8 +1,8 @@
 .card {
-  background: #fff;
+  background: rgba(255,255,255,1);
   border-radius: 6px;
   border: 1px solid #fafafa;
-  padding: 20px;
+  padding: 30px;
   width: 100%;
   box-shadow: 0px 3px 5px rgba(75, 75, 75, 0.1);
   position: absolute;
@@ -11,8 +11,20 @@
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: all .5s ease;
+  backdrop-filter: blur(20px);
+  z-index: 10;
 }
 .card.inactive {
   top: 53%;
   opacity: 0;
+}
+.card .question {
+  margin-bottom: 20px;
+}
+.card .question p {
+  font-size: 36px;
+  font-weight: 600;
+}
+.card .answers {
+  margin-bottom: 20px;
 }

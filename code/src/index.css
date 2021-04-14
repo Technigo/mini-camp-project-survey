@@ -18,13 +18,106 @@ body {
   color: #333;
   background: #FEF7E6;
   padding: 20px;
+  font-size: 16px;
 }
 #root {
   height: 100%;
 }
 .App {
   width: 80%;
+  max-width: 700px;
   height: 100%;
   margin: 0 auto;
   position: relative;
+}
+p {
+  margin: 0;
+}
+.circle {
+  position: absolute;
+  shape-outside: circle();
+  clip-path: circle();
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+.circle-1 {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to top right, #f1ba8d, #FD987D);
+  left: -10%;
+  top: 29%;
+  z-index: 1;
+  animation-name: floating-1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-2 {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to top right, #bedeff, #78b9eb);
+  left: -11%;
+  top: 41%;
+  z-index: 2;
+  animation-name: floating-2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-3 {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to top right, #f9c8fe, #d87fbc);
+  right: -11%;
+  top: 41%;
+  z-index: 12;
+  animation-name: floating-2;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-4 {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to top right, #d3fffc, #6cbead);
+  right: -10%;
+  top: 45%;
+  z-index: 1;
+  animation-name: floating-1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating-1 {
+  0% {
+    transform: translate(0,  0px);
+    transform: scale(1);
+  }
+  50%  {
+    transform: translate(5px, 10px);
+    transform: scale(1.1);
+  }
+  100%   {
+    transform: translate(0, -0px);
+    transform: scale(1);
+  }    
+}
+@keyframes floating-2 {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(-10px, 15px); }
+  100%   { transform: translate(0, -0px); }    
+}
+@keyframes floating-3 {
+  0% {
+    transform: translate(0,  0px);
+    transform: scale(1);
+  }
+  50%  {
+    transform: translate(-15px, 15px);
+    transform: scale(1);
+  }
+  100%   {
+    transform: translate(0, -0px);
+    transform: scale(1);
+  }    
 }

@@ -10,17 +10,17 @@
         {
           "answer_id": 1,
           "name": "experience",
-          "label": "Not very experienced"
+          "label": "Not very experienced 👶"
         },
         {
           "answer_id": 2,
-          "name": "I can google",
-          "label": "Guess I'm okay."
+          "name": "experienced",
+          "label": "I can google 🔍"
         },
         {
           "answer_id": 3,
           "name": "experience",
-          "label": "I’m feeling confident"
+          "label": "I’m feeling confident 🔥"
         }
       ]
     },
@@ -46,32 +46,32 @@
         {
           "answer_id": 1,
           "name": "introduction meeting",
-          "label": "Introduction meeting"
+          "label": "Introduction meeting 👋"
         },
         {
           "answer_id": 2,
           "name": "project brief",
-          "label": "Project brief"
+          "label": "Project brief 💼"
         },
         {
           "answer_id": 3,
           "name": "1on1",
-          "label": "1on1"
+          "label": "1on1 💬"
         },
         {
           "answer_id": 4,
           "name": "q&a",
-          "label": "Q&A"
+          "label": "Q&A 💁"
         },
         {
           "answer_id": 5,
           "name": "projects",
-          "label": "Projects"
+          "label": "Projects 📝"
         },
         {
           "answer_id": 6,
           "name": "weekly exercises",
-          "label": "Weekly Exercises"
+          "label": "Weekly Exercises ⛹"
         }
       ]
     }
