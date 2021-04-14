@@ -22,14 +22,7 @@ const Card = ({
   updateCurrentQuestion
 }) => {
   function handleContinue() {
-    console.log('Continue');
-    console.log(currentQuestion)
-    console.log(totalQuestions)
-    if (currentQuestion === totalQuestions) {
-      console.log('display summary');
-    } else {
-      updateCurrentQuestion(currentQuestion + 1);
-    }
+    updateCurrentQuestion(currentQuestion + 1);
   }
   if (questionType === 'input') {
     answers = <Input
@@ -56,7 +49,7 @@ const Card = ({
       updateReply={updateReply} />
   }
   return (
-    <div className={`card card-question-${questionID}`}>
+    <div id={`card-${questionID}`} className={`card card-question-${questionID} inactive`}>
       <div className="question">
         <p>{question}</p>
       </div>

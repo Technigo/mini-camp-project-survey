@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import data from './data.json';
 import Card from './components/Card';
@@ -28,19 +28,21 @@ export const App = () => {
       updateImprove(reply)
     }
   }
+  useEffect(() => {
+    if (currentQuestion <= totalQuestions) {
+      document.getElementById(`card-${currentQuestion}`).classList.remove('inactive');
+    } else {
+      document.getElementById(`card-${totalQuestions + 1}`).classList.remove('inactive');
+    }
+  });
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('submit');
-    console.log(`Total questions: ${data.questions.length}`);
     updateSurveyOver(true);
-  }
-  function handleReset() {
-    window.location.reload();
   }
   return (
     <div className="App">
       {surveyOver ? (
-        <div className="summary">
+        <div id={`card-${totalQuestions}`} className="card card-summary inactive">
           <h1>Summary</h1>
           <p>{replyExperience || null}</p>
           <p>{replyWeeks || null}</p>
@@ -55,10 +57,10 @@ export const App = () => {
             type="reset"
             name="reset-button"
             styleClass="primary"
-            onClick={handleReset} />
+            onClick={() => (window.location.reload())} />
         </div>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           {questionData.map((question) => {
             return (
               <Card
