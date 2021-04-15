@@ -41,7 +41,7 @@
       "question_text": "Select one or multiple things that could be improved with the course",
       "question_type": "checkbox",
       "isRequired": "required",
-      "style": "list",
+      "style": "row",
       "answer_options": [
         {
           "answer_id": 1,
@@ -51,12 +51,12 @@
         {
           "answer_id": 2,
           "name": "project brief",
-          "label": "Project brief 💼"
+          "label": "Project Brief 💼"
         },
         {
           "answer_id": 3,
           "name": "1on1",
-          "label": "1on1 💬"
+          "label": "1 on 1 💬"
         },
         {
           "answer_id": 4,

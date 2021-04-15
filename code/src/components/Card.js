@@ -28,7 +28,7 @@ const Card = ({
     answers = <Input
       questionID={questionID}
       value=""
-      placeholder="Text"
+      placeholder=""
       type="text"
       styleClass="primary"
       isRequired={isRequired}
@@ -51,7 +51,12 @@ const Card = ({
   return (
     <div id={`card-${questionID}`} className={`card card-question-${questionID} inactive`}>
       <div className="question">
-        <p>{question}</p>
+        <div className="question-info">
+          <span className="current-questions">{currentQuestion}</span>
+          <span className="question-info-divider">/</span>
+          <span className="total-questions">{totalQuestions}</span>
+        </div>
+        <h1>{question}</h1>
       </div>
       <div className="answers">
         {answers}

@@ -4,12 +4,13 @@
   font-size: inherit;
   font-weight: 500;
   color: #333333;
-  border: 1px solid #999;
+  border: 2px solid rgb(228, 228, 228);
   padding: 6px;
   padding-left: 10px;
   border-style: solid;
   border-radius: 5px;
-  height: 36px;
+  height: 42px;
+  width: 100%;
   margin: auto;
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -18,7 +19,7 @@
 }
 .input:hover:not(:disabled),
 .input:focus {
-  border: 1px solid #555;
+  border: 2px solid #2279EB;
   outline: none;
 }
 .input::placeholder {

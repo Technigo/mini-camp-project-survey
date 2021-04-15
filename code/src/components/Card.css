@@ -1,6 +1,6 @@
 .card {
   background: rgba(255,255,255,1);
-  border-radius: 6px;
+  border-radius: 10px;
   border: 1px solid #fafafa;
   padding: 30px;
   width: 100%;
@@ -11,7 +11,6 @@
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: all .5s ease;
-  backdrop-filter: blur(20px);
   z-index: 10;
 }
 .card.inactive {
@@ -19,12 +18,51 @@
   opacity: 0;
 }
 .card .question {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
-.card .question p {
+.card h1 {
   font-size: 36px;
   font-weight: 600;
+  margin-top: 0;
 }
 .card .answers {
+  margin-bottom: 30px;
+}
+.card .question-info {
+  color: #bababa;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.card .summary-wrapper {
+  margin-bottom: 30px;
+}
+.card .button {
+  text-align: center;
+}
+.card .summary-question {
+  font-size: 18px;
+  font-weight: 600;
+}
+.card .summary-reply {
   margin-bottom: 20px;
+}
+.card .summary-reply:first-letter {
+  text-transform: capitalize;
+}
+
+.summary-reply-checkbox span:first-child {
+  text-transform: capitalize;
+}
+.summary-reply-checkbox span + span:last-child {
+  content: " and ";
+}
+.summary-reply-checkbox span + span:last-child:before {
+  content: " and ";
+}
+.summary-reply-checkbox span:nth-of-type(n + 2):not(:last-child) {
+content: ", ";
+}
+.summary-reply-checkbox span:nth-of-type(n + 2):not(:last-child)::before {
+content: ", ";
 }

@@ -10,11 +10,12 @@ const Checkbox = ({
   updateReply
 }) => {
   const [checkedCheckboxes, setCheckbox] = useState({});
+  const [checkedNames, setCheckedNames] = useState({});
   const handleChange = (e) => {
     setCheckbox(
       {
         ...checkedCheckboxes,
-        [e.target.name]:
+        [e.target.id]:
         e.target.checked
       }
     );
@@ -26,6 +27,14 @@ const Checkbox = ({
         e.target.checked
       } }
     );
+    setCheckedNames(
+      {
+        ...checkedNames,
+        [e.target.name]:
+        e.target.checked
+      }
+    );
+    console.log({ checkedNames })
   };
   return (
     <div className={`checkbox-group ${styleClass} ${isRequired}`}>

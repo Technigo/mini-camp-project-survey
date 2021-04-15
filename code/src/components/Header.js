@@ -1,11 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import "./Header.css";
+import './Header.css';
 
-const Header = ({ title }) => {
+const Header = () => {
   return (
-    <header>
-      <h1>{title}</h1>
+    <header className="header">
+      <div className="steps">
+        <div className="step done" />
+        <div className="step done" />
+        <div className="step" />
+        <div className="step" />
+      </div>
     </header>
   );
 };

@@ -1,19 +1,18 @@
 .button {
-  font-size: 16px;
+  font-size: 18px;
   background-color: #1875ee;
   border: 1px solid #13629e;
   color: #ffffff;
   cursor: pointer;
-  height: 36px;
+  height: 42px;
   outline: 0;
   margin: 10px;
   padding: 5px 15px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
-  border-radius: 18px;
+  border-radius: 10px;
   margin: auto;
-  letter-spacing: 0.5px;
 }
 .button:hover:not(:disabled) {
   background-color: #1567d3;
