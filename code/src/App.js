@@ -125,17 +125,21 @@ export const App = () => {
                 </form>
               </>
             )}
+            <div className="circle circle-3" />
           </>
         )}
+      </section>
+      <div className="circle-inner">
         <div className="circle circle-1" />
         <div className="circle circle-2" />
-        <div className="circle circle-3" />
         <div className="circle circle-4" />
-      </section>
-      <div className="circle circle-5" />
-      <div className="circle circle-6" />
-      <div className="circle circle-7" />
-      <div className="circle circle-8" />
+      </div>
+      <div className="circle-outer">
+        <div className="circle circle-5" />
+        <div className="circle circle-6" />
+        <div className="circle circle-7" />
+        <div className="circle circle-8" />
+      </div>
     </div>
   );
 }
