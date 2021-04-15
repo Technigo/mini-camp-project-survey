@@ -43,6 +43,7 @@
 .card .summary-question {
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 .card .summary-reply {
   margin-bottom: 20px;

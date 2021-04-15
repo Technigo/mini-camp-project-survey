@@ -12,6 +12,7 @@ export const App = () => {
   const [replyWeeks, updateWeeks] = useState([]);
   const [replyFavourite, updateFavourite] = useState([]);
   const [replyImprove, updateImprove] = useState([]);
+  const [showIntro, updateShowIntro] = useState(true);
   const [surveyOver, updateSurveyOver] = useState(false);
   const [currentQuestion, updateCurrentQuestion] = useState(1);
   const questionData = data.questions.filter((item) => item.question_id === currentQuestion);
@@ -28,10 +29,12 @@ export const App = () => {
     }
   }
   useEffect(() => {
-    if (currentQuestion <= totalQuestions) {
-      document.getElementById(`card-${currentQuestion}`).classList.remove('inactive');
-    } else {
-      document.getElementById(`card-${totalQuestions + 1}`).classList.remove('inactive');
+    if (!showIntro) {
+      if (currentQuestion <= totalQuestions) {
+        document.getElementById(`card-${currentQuestion}`).classList.remove('inactive');
+      } else {
+        document.getElementById(`card-${totalQuestions + 1}`).classList.remove('inactive');
+      }
     }
   });
   function handleSubmit(e) {
@@ -41,6 +44,11 @@ export const App = () => {
   return (
     <div className="App">
       {/* <Header totalSteps={totalQuestions} /> */}
+      {!showIntro ? (
+        <img className="survey-logo" src="assets/technigo-logo.png" width="100" alt="logo" />
+      ) : (
+        null
+      )}
       <section className="survey">
         {surveyOver ? (
           <div id={`card-${totalQuestions}`} className="card card-summary inactive">
@@ -83,30 +91,51 @@ export const App = () => {
               onClick={() => (window.location.reload())} />
           </div>
         ) : (
-          <form className="form" onSubmit={handleSubmit}>
-            {questionData.map((question) => {
-              return (
-                <Card
-                  key={question.question_id}
-                  questionID={question.question_id}
-                  question={question.question_text}
-                  questionType={question.question_type}
-                  answerOptions={question.answer_options}
-                  styleClass={question.style}
-                  isRequired={question.isRequired}
-                  updateReply={storeReply}
-                  totalQuestions={totalQuestions}
-                  currentQuestion={currentQuestion}
-                  updateCurrentQuestion={updateCurrentQuestion} />
-              );
-            })}
-          </form>
+          <>
+            {showIntro ? (
+              <div className="intro">
+                <img className="intro-logo" src="assets/technigo-logo.png" width="100" alt="logo" />
+                <h1 className="intro-title">Welcome to the Technigo survey!<br />Let&apos;s find out how you rate your course.</h1>
+                <Button
+                  value="Start Survey"
+                  type="continue"
+                  name="continue-button"
+                  styleClass="primary"
+                  onClick={() => updateShowIntro(false)} />
+              </div>
+            ) : (
+              <>
+                <form className="form" onSubmit={handleSubmit}>
+                  {questionData.map((question) => {
+                    return (
+                      <Card
+                        key={question.question_id}
+                        questionID={question.question_id}
+                        question={question.question_text}
+                        questionType={question.question_type}
+                        answerOptions={question.answer_options}
+                        styleClass={question.style}
+                        isRequired={question.isRequired}
+                        updateReply={storeReply}
+                        totalQuestions={totalQuestions}
+                        currentQuestion={currentQuestion}
+                        updateCurrentQuestion={updateCurrentQuestion} />
+                    );
+                  })}
+                </form>
+              </>
+            )}
+          </>
         )}
         <div className="circle circle-1" />
         <div className="circle circle-2" />
         <div className="circle circle-3" />
         <div className="circle circle-4" />
       </section>
+      <div className="circle circle-5" />
+      <div className="circle circle-6" />
+      <div className="circle circle-7" />
+      <div className="circle circle-8" />
     </div>
   );
 }
