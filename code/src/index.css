@@ -244,11 +244,9 @@ p {
     left: 0;
     right: 0;
   }
-  .survey .circle {
-    opacity: 0;
-  }
-  .circle-3 {
+  .survey .circle-3 {
     right: -29%;
+    display: none;
   }
   .checkbox-group.row {
     width: 100% !important;
