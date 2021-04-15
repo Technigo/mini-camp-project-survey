@@ -94,8 +94,8 @@ export const App = () => {
           <>
             {showIntro ? (
               <div className="intro">
-                <img className="intro-logo" src="assets/technigo-logo.png" width="100" alt="logo" />
-                <h1 className="intro-title">Welcome to the Technigo survey!<br />Let&apos;s find out how you rate your course.</h1>
+                <img className="intro-logo" src="assets/technigo-logo.png" width="150" alt="logo" />
+                <h1 className="intro-title">Welcome to the Technigo survey!<br />Let&apos;s find out how you rate the course.</h1>
                 <Button
                   value="Start Survey"
                   type="continue"
@@ -125,9 +125,9 @@ export const App = () => {
                 </form>
               </>
             )}
-            <div className="circle circle-3" />
           </>
         )}
+        <div className="circle circle-3" />
       </section>
       <div className="circle-inner">
         <div className="circle circle-1" />
