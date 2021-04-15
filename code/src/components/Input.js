@@ -26,8 +26,7 @@ const Input = ({
       placeholder={placeholder}
       onChange={handleChange}
       disabled={isDisabled}
-      required={isRequired}
-      ref={(input) => input && input.focus()} />
+      required={isRequired} />
   );
 };
 export default Input;
