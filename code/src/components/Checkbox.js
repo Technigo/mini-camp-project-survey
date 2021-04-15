@@ -34,7 +34,6 @@ const Checkbox = ({
         e.target.checked
       }
     );
-    console.log({ checkedNames })
   };
   return (
     <div className={`checkbox-group ${styleClass} ${isRequired}`}>
