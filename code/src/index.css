@@ -210,15 +210,18 @@ p {
   }    
 }
 @media only screen and (max-width: 500px) {
-  .App {
-    overflow: hidden;
+  body {
+    overflow-y: scroll;
   }
   .card h1 {
-    font-size: 26px;
+    font-size: 26px !important;
+  }
+  .intro-title {
+    font-size: 20px;
+    line-height: 26px;
   }
   .survey {
     width: 90%;
-    overflow: hidden;
   }
   .survey-logo {
     display: none;
@@ -231,11 +234,12 @@ p {
   .circle-inner {
     overflow: hidden;
     width: 100%;
+    position: fixed;
   }
   .circle-outer {
     height: 100%;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -245,5 +249,9 @@ p {
   }
   .circle-3 {
     right: -29%;
+  }
+  .checkbox-group.row {
+    width: 100% !important;
+    display: grid !important;
   }
 }
