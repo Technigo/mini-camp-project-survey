@@ -8,6 +8,7 @@ import Button from './components/Button';
 import './index.css';
 
 export const App = () => {
+  const [replyCourse, updateCourse] = useState([]);
   const [replyExperience, updateExperience] = useState([]);
   const [replyWeeks, updateWeeks] = useState([]);
   const [replyFavourite, updateFavourite] = useState([]);
@@ -19,12 +20,14 @@ export const App = () => {
   const totalQuestions = data.questions.length;
   function storeReply(questionID, reply) {
     if (questionID === 1) {
-      updateExperience(reply)
+      updateCourse(reply)
     } else if (questionID === 2) {
-      updateWeeks(reply)
+      updateExperience(reply)
     } else if (questionID === 3) {
-      updateFavourite(reply)
+      updateWeeks(reply)
     } else if (questionID === 4) {
+      updateFavourite(reply)
+    } else if (questionID === 5) {
       updateImprove(reply)
     }
   }
@@ -58,24 +61,30 @@ export const App = () => {
                 {data.questions[0].question_id}. {data.questions[0].question_text}
               </p>
               <p className="summary-reply summary-reply-1">
-                {replyExperience || null}
+                {replyCourse || null}
               </p>
               <p className="summary-question summary-question-2">
                 {data.questions[1].question_id}. {data.questions[1].question_text}
               </p>
               <p className="summary-reply summary-reply-2">
-                {replyWeeks || null}
+                {replyExperience || null}
               </p>
               <p className="summary-question summary-question-3">
                 {data.questions[2].question_id}. {data.questions[2].question_text}
               </p>
               <p className="summary-reply summary-reply-3">
-                {replyFavourite || null}
+                {replyWeeks || null}
               </p>
               <p className="summary-question summary-question-4">
                 {data.questions[3].question_id}. {data.questions[3].question_text}
               </p>
-              <span className="summary-reply summary-reply-checkbox summary-reply-4">
+              <p className="summary-reply summary-reply-4">
+                {replyFavourite || null}
+              </p>
+              <p className="summary-question summary-question-5">
+                {data.questions[4].question_id}. {data.questions[4].question_text}
+              </p>
+              <span className="summary-reply summary-reply-checkbox summary-reply-5">
                 {replyImprove.checkboxValues ? (
                   Object.keys(replyImprove.checkboxValues).map((item, i) => (
                     <span className="checkbox-items" key={i}>{item}</span>

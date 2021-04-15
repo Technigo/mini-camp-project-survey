@@ -4,6 +4,7 @@ import Checkbox from './Checkbox';
 import Radio from './Radio';
 import Input from './Input';
 import Button from './Button';
+import Dropdown from './Dropdown';
 
 import './Card.css';
 
@@ -46,6 +47,12 @@ const Card = ({
       data={answerOptions}
       styleClass={styleClass}
       isRequired={isRequired}
+      updateReply={updateReply} />
+  } else if (questionType === 'dropdown') {
+    answers = <Dropdown
+      questionID={questionID}
+      data={answerOptions}
+      name="select"
       updateReply={updateReply} />
   }
   return (
