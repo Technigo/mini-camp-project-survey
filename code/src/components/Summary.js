@@ -37,8 +37,8 @@ const Summary = ({
           {data.questions[3].question_id}. {data.questions[3].question_text}
         </p>
         <span className="summary-reply summary-reply-checkbox summary-reply-4">
-          {replyImprove.checkboxValues ? (
-            Object.keys(replyImprove.checkboxValues).map((item, i) => (
+          {replyImprove ? (
+            Object.keys(replyImprove).filter((k) => replyImprove[k] === true).map((item, i) => (
               <span className="checkbox-items" key={i}>{item}</span>
             ))
           ) : (null)}

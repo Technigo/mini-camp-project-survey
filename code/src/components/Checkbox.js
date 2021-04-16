@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './Checkbox.css';
 
@@ -18,6 +18,7 @@ const Checkbox = ({
         e.target.checked
       }
     );
+    /*
     updateReply(
       questionID,
       { checkboxValues: {
@@ -25,8 +26,12 @@ const Checkbox = ({
         [e.target.name]:
         e.target.checked
       } }
-    );
+    ); */
   };
+  useEffect(() => {
+    console.log(checkedCheckboxes)
+    updateReply(questionID, checkedCheckboxes)
+  });
   return (
     <div className={`checkbox-group ${styleClass} ${isRequired}`}>
       {data.map((item) => {
