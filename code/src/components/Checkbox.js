@@ -18,15 +18,6 @@ const Checkbox = ({
         e.target.checked
       }
     );
-    /*
-    updateReply(
-      questionID,
-      { checkboxValues: {
-        ...checkedCheckboxes,
-        [e.target.name]:
-        e.target.checked
-      } }
-    ); */
   };
   useEffect(() => {
     console.log(checkedCheckboxes)
