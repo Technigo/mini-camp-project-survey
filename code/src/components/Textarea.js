@@ -16,14 +16,13 @@ const Textarea = ({
   }
   return (
     <textarea
+      value={textValue}
       className="textarea"
       id="textarea"
       name="textarea"
       onChange={handleChange}
       disabled={isDisabled}
-      required={isRequired}>
-      {textValue}
-    </textarea>
+      required={isRequired} />
   );
 };
 export default Textarea;

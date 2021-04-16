@@ -10,7 +10,6 @@ const Checkbox = ({
   updateReply
 }) => {
   const [checkedCheckboxes, setCheckbox] = useState({});
-  const [checkedNames, setCheckedNames] = useState({});
   const handleChange = (e) => {
     setCheckbox(
       {
@@ -26,13 +25,6 @@ const Checkbox = ({
         [e.target.name]:
         e.target.checked
       } }
-    );
-    setCheckedNames(
-      {
-        ...checkedNames,
-        [e.target.name]:
-        e.target.checked
-      }
     );
   };
   return (
