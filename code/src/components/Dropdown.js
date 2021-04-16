@@ -4,21 +4,19 @@ import './Dropdown.css';
 
 const Dropdown = ({ questionID, data, name, updateReply }) => {
   const handleChange = (e) => {
-    console.log(e.target.value)
     updateReply(questionID, e.target.value);
   }
-  console.log(data[0].isHidden)
   return (
     <div className={`select-wrapper select-wrapper-${questionID}`}>
       <select
         className="select"
         name={name}
-        onChange={handleChange}>
+        onChange={handleChange}
+        defaultValue={data[0].label}>
         {data.map((item) => {
           if (item.isDisabled) {
             return (
               <option
-                selected
                 disabled
                 key={item.answer_id}
                 value={item.label}>
