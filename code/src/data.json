@@ -7,6 +7,12 @@
       "isRequired": "required",
       "answer_options": [
         {
+          "answer_id": 0,
+          "value": "0",
+          "label": "Choose boot camp",
+          "isDisabled": "disabled"
+        },
+        {
           "answer_id": 1,
           "value": "1",
           "label": "6 Week Mini Camp - Start with web development (Beginner)"
@@ -35,7 +41,7 @@
     },
     {
       "question_id": 2,
-      "question_text": "How would you rate your experience level in React?",
+      "question_text": "How would you rate your experience in web development?",
       "question_type": "radio",
       "isRequired": "required",
       "style": "list",
@@ -54,23 +60,22 @@
           "answer_id": 3,
           "name": "experience",
           "label": "I’m feeling confident 🔥"
+        },
+        {
+          "answer_id": 4,
+          "name": "experience",
+          "label": "I’m now working as a developer 💪"
         }
       ]
     },
     {
       "question_id": 3,
-      "question_text": "How many weeks have you been on the course?",
-      "question_type": "input",
+      "question_text": "What have so far been your favourite thing about the course?",
+      "question_type": "textarea",
       "isRequired": "required"
     },
     {
       "question_id": 4,
-      "question_text": "What have so far been your favourite thing about the course?",
-      "question_type": "input",
-      "isRequired": "required"
-    },
-    {
-      "question_id": 5,
       "question_text": "Select one or multiple things that could be improved with the course",
       "question_type": "checkbox",
       "isRequired": "required",
@@ -105,6 +110,46 @@
           "answer_id": 6,
           "name": "Weekly Exercises ⛹",
           "label": "Weekly Exercises ⛹"
+        }
+      ]
+    },
+    {
+      "question_id": 5,
+      "question_text": "Care to explain in more detail what can be improved?",
+      "question_type": "textarea",
+      "isRequired": ""
+    },
+    {
+      "question_id": 6,
+      "question_text": "What is your overall rating of the course?",
+      "question_type": "radio",
+      "isRequired": "",
+      "style": "list",
+      "answer_options": [
+        {
+          "answer_id": 1,
+          "name": "rating",
+          "label": "🌟"
+        },
+        {
+          "answer_id": 2,
+          "name": "rating",
+          "label": "🌟🌟"
+        },
+        {
+          "answer_id": 3,
+          "name": "rating",
+          "label": "🌟🌟🌟"
+        },
+        {
+          "answer_id": 4,
+          "name": "rating",
+          "label": "🌟🌟🌟🌟"
+        },
+        {
+          "answer_id": 5,
+          "name": "rating",
+          "label": "🌟🌟🌟🌟🌟"
         }
       ]
     }

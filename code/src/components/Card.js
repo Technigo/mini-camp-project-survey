@@ -5,6 +5,7 @@ import Radio from './Radio';
 import Input from './Input';
 import Button from './Button';
 import Dropdown from './Dropdown';
+import Textarea from './Textarea';
 
 import './Card.css';
 
@@ -53,6 +54,13 @@ const Card = ({
       questionID={questionID}
       data={answerOptions}
       name="select"
+      updateReply={updateReply} />
+  } else if (questionType === 'textarea') {
+    answers = <Textarea
+      questionID={questionID}
+      value=""
+      placeholder=""
+      isRequired={isRequired}
       updateReply={updateReply} />
   }
   return (

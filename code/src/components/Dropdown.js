@@ -7,6 +7,7 @@ const Dropdown = ({ questionID, data, name, updateReply }) => {
     console.log(e.target.value)
     updateReply(questionID, e.target.value);
   }
+  console.log(data[0].isHidden)
   return (
     <div className={`select-wrapper select-wrapper-${questionID}`}>
       <select
@@ -14,9 +15,21 @@ const Dropdown = ({ questionID, data, name, updateReply }) => {
         name={name}
         onChange={handleChange}>
         {data.map((item) => {
-          return (
-            <option key={item.answer_id} value={item.label}>{item.label}</option>
-          );
+          if (item.isDisabled) {
+            return (
+              <option
+                selected
+                disabled
+                key={item.answer_id}
+                value={item.label}>
+                {item.label}
+              </option>
+            );
+          } else {
+            return (
+              <option key={item.answer_id} value={item.label}>{item.label}</option>
+            );
+          }
         })}
       </select>
     </div>
