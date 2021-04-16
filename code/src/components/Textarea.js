@@ -12,7 +12,7 @@ const Textarea = ({
   const [textValue, setTextValue] = useState(value);
   const handleChange = (e) => {
     setTextValue(e.target.value);
-    updateReply(questionID, textValue);
+    updateReply(questionID, e.target.value);
   }
   return (
     <textarea
@@ -22,7 +22,7 @@ const Textarea = ({
       onChange={handleChange}
       disabled={isDisabled}
       required={isRequired}>
-      {value}
+      {textValue}
     </textarea>
   );
 };
