@@ -20,7 +20,6 @@ const Checkbox = ({
     );
   };
   useEffect(() => {
-    console.log(checkedCheckboxes)
     updateReply(questionID, checkedCheckboxes)
   });
   return (
