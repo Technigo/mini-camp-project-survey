@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 import data from './data.json';
-// import Header from './components/Header';
+import Intro from './components/Intro';
+import Summary from './components/Summary';
 import Card from './components/Card';
-import Button from './components/Button';
 
 import './index.css';
 
@@ -49,7 +49,6 @@ export const App = () => {
   }
   return (
     <div className="App">
-      {/* <Header totalSteps={totalQuestions} /> */}
       {!showIntro ? (
         <img className="survey-logo" src="assets/technigo-logo.png" width="100" alt="logo" />
       ) : (
@@ -57,71 +56,19 @@ export const App = () => {
       )}
       <section className="survey">
         {surveyOver ? (
-          <div id={`card-${totalQuestions}`} className="card card-summary inactive">
-            <div className="summary-wrapper">
-              <h1>Summary</h1>
-              <p className="summary-question summary-question-1">
-                {data.questions[0].question_id}. {data.questions[0].question_text}
-              </p>
-              <p className="summary-reply summary-reply-1">
-                {replyCourse || null}
-              </p>
-              <p className="summary-question summary-question-2">
-                {data.questions[1].question_id}. {data.questions[1].question_text}
-              </p>
-              <p className="summary-reply summary-reply-2">
-                {replyExperience || null}
-              </p>
-              <p className="summary-question summary-question-3">
-                {data.questions[2].question_id}. {data.questions[2].question_text}
-              </p>
-              <p className="summary-reply summary-reply-3">
-                {replyFavourite || null}
-              </p>
-              <p className="summary-question summary-question-4">
-                {data.questions[3].question_id}. {data.questions[3].question_text}
-              </p>
-              <span className="summary-reply summary-reply-checkbox summary-reply-4">
-                {replyImprove.checkboxValues ? (
-                  Object.keys(replyImprove.checkboxValues).map((item, i) => (
-                    <span className="checkbox-items" key={i}>{item}</span>
-                  ))
-                ) : (null)}
-              </span>
-              <p className="summary-question summary-question-5">
-                {data.questions[4].question_id}. {data.questions[4].question_text}
-              </p>
-              <p className="summary-reply summary-reply-5">
-                {replyImproveDetails || null}
-              </p>
-              <p className="summary-question summary-question-6">
-                {data.questions[5].question_id}. {data.questions[5].question_text}
-              </p>
-              <p className="summary-reply summary-reply-6">
-                {replyRating || null}
-              </p>
-
-            </div>
-            <Button
-              value="Start Over"
-              type="reset"
-              name="reset-button"
-              styleClass="primary"
-              onClick={() => (window.location.reload())} />
-          </div>
+          <Summary
+            data={data}
+            totalQuestions={totalQuestions}
+            replyCourse={replyCourse}
+            replyExperience={replyExperience}
+            replyFavourite={replyFavourite}
+            replyImprove={replyImprove}
+            replyImproveDetails={replyImproveDetails}
+            replyRating={replyRating} />
         ) : (
           <>
             {showIntro ? (
-              <div className="intro">
-                <img className="intro-logo" src="assets/technigo-logo.png" width="150" alt="logo" />
-                <h1 className="intro-title">Welcome to the Technigo survey!<br />Let&apos;s find out how you rate the course.</h1>
-                <Button
-                  value="Start Survey"
-                  type="continue"
-                  name="continue-button"
-                  styleClass="primary"
-                  onClick={() => updateShowIntro(false)} />
-              </div>
+              <Intro updateShowIntro={updateShowIntro} />
             ) : (
               <>
                 <form className="form" onSubmit={handleSubmit}>

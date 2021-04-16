@@ -83,32 +83,32 @@
       "answer_options": [
         {
           "answer_id": 1,
-          "name": "Introduction Meeting 👋",
+          "name": "👋 Introduction Meeting",
           "label": "Introduction Meeting 👋"
         },
         {
           "answer_id": 2,
-          "name": "Project Brief 💼",
+          "name": "💼 Project Brief",
           "label": "Project Brief 💼"
         },
         {
           "answer_id": 3,
-          "name": "1on1 💬",
+          "name": "💬 1on1",
           "label": "1on1 💬"
         },
         {
           "answer_id": 4,
-          "name": "Q&A 💁",
+          "name": "💁 Q&A",
           "label": "Q&A 💁"
         },
         {
           "answer_id": 5,
-          "name": "Projects 📝",
+          "name": "📝 Projects",
           "label": "Projects 📝"
         },
         {
           "answer_id": 6,
-          "name": "Weekly Exercises ⛹",
+          "name": "⛹ Weekly Exercises",
           "label": "Weekly Exercises ⛹"
         }
       ]
