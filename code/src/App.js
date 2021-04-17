@@ -105,6 +105,8 @@ export const App = () => {
         <div className="circle circle-6" />
         <div className="circle circle-7" />
         <div className="circle circle-8" />
+        <div className="circle circle-9" />
+        <div className="circle circle-10" />
       </div>
     </div>
   );
