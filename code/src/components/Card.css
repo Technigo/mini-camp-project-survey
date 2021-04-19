@@ -34,7 +34,20 @@
   font-size: 16px;
   margin-bottom: 10px;
 }
-.card .summary-wrapper {
+.summary-wrapper {
+  margin-bottom: 20px;
+  margin-top: 55px;
+  z-index: 1;
+  position: relative;
+}
+.summary-wrapper .button {
+  margin-bottom: 20px;
+}
+.card-summary {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
   margin-bottom: 20px;
 }
 .card .button {
@@ -45,9 +58,6 @@
   font-weight: 600;
   margin-bottom: 5px;
   display: inline-block;
-}
-.card .summary-reply {
-  margin-bottom: 20px;
 }
 .card .summary-reply:first-letter {
   text-transform: capitalize;

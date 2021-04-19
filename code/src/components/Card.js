@@ -6,6 +6,7 @@ import Input from './Input';
 import Button from './Button';
 import Dropdown from './Dropdown';
 import Textarea from './Textarea';
+import Slider from './Slider';
 
 import './Card.css';
 
@@ -62,7 +63,13 @@ const Card = ({
       placeholder=""
       isRequired={isRequired}
       updateReply={updateReply} />
+  } else if (questionType === 'slider') {
+    answers = <Slider
+      questionID={questionID}
+      data={answerOptions}
+      updateReply={updateReply} />
   }
+
   return (
     <div id={`card-${questionID}`} className={`card card-question-${questionID} inactive`}>
       <div className="question">

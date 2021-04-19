@@ -1,0 +1,10 @@
+.input-slider {
+  width: 100%;
+  cursor: pointer;
+}
+#rating-steps {
+  display: flex;
+}
+#rating-steps option {
+  width: 20%;
+}

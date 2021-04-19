@@ -122,7 +122,7 @@
     {
       "question_id": 6,
       "question_text": "What is your overall rating of the course?",
-      "question_type": "radio",
+      "question_type": "slider",
       "isRequired": "",
       "style": "list",
       "answer_options": [

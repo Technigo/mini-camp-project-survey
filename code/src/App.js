@@ -39,7 +39,7 @@ export const App = () => {
       if (currentQuestion <= totalQuestions) {
         document.getElementById(`card-${currentQuestion}`).classList.remove('inactive');
       } else {
-        document.getElementById(`card-${totalQuestions + 1}`).classList.remove('inactive');
+        document.getElementById('card-summary').classList.remove('inactive');
       }
     }
   });
@@ -50,7 +50,7 @@ export const App = () => {
   return (
     <div className="App">
       {!showIntro ? (
-        <img className="survey-logo" src="assets/technigo-logo.png" width="100" alt="logo" />
+        <a href="/"><img className="survey-logo" src="assets/technigo-logo.png" width="100" alt="logo" /></a>
       ) : (
         null
       )}
@@ -93,11 +93,11 @@ export const App = () => {
             )}
           </>
         )}
-        <div className="circle circle-3" />
       </section>
       <div className="circle-inner">
         <div className="circle circle-1" />
         <div className="circle circle-2" />
+        <div className="circle circle-3" />
         <div className="circle circle-4" />
       </div>
       <div className="circle-outer">

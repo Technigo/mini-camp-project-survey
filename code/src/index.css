@@ -18,7 +18,7 @@ body {
   color: #333;
   background: #FEF7E6;
   font-size: 18px;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 #root {
   height: 100%;
@@ -35,7 +35,7 @@ body {
   position: relative;
 }
 .survey-logo {
-  position: absolute;
+  position: fixed;
   left: 20px;
   top: 20px;
   z-index: 100;
@@ -87,7 +87,7 @@ p {
   right: 0;
 }
 .circle {
-  position: absolute;
+  position: fixed;
   shape-outside: circle();
   clip-path: circle();
   transform: translate(-50%, -50%);
@@ -130,6 +130,7 @@ p {
   animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  position: absolute;
 }
 .circle-4 {
   height: 200px;
@@ -248,6 +249,11 @@ p {
     transform: scale(1);
   }    
 }
+@media only screen and (max-width: 970px) {
+  .survey-logo {
+    display: none;
+  }
+}
 @media only screen and (max-width: 560px) {
   body {
     overflow-y: scroll;
@@ -283,5 +289,15 @@ p {
   .checkbox-group.row {
     width: 100% !important;
     display: grid !important;
+  }
+  .summary-wrapper {
+    margin-top: 0 !important;
+  }
+  .summary-wrapper h1 {
+    margin-bottom: 0;
+  }
+  .summary-wrapper .button {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
