@@ -25,6 +25,11 @@
   border: 2px solid rgb(228, 228, 228);
   margin-bottom: 10px;
 }
+.checkbox-label.checked-true {
+  color: #000;
+  border: 2px solid #2279EB;
+  background: #f3f8ff;
+}
 .checkbox-label span {
   margin-right: 10px;
 }

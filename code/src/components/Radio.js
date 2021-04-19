@@ -18,7 +18,7 @@ const Radio = ({
     <div className={`radio-group ${styleClass} ${isRequired}`}>
       {data.map((item) => {
         return (
-          <label className="radio-label" key={item.answer_id} htmlFor={item.answer_id}>
+          <label className={`radio-label checked-${radio === item.answer_id}`} key={item.answer_id} htmlFor={item.answer_id}>
             <input
               className="input-radio"
               type="radio"

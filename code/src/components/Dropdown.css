@@ -26,6 +26,11 @@
   width: 100%;
   margin-bottom: 30px;
 }
+.select-wrapper:hover select{
+  color: #000;
+  border: 2px solid #2279EB;
+  background: #f3f8ff;
+}
 .select-wrapper:after {
   content: ' ';
   background: url(./icons/arrow-down.svg) no-repeat;

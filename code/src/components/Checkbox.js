@@ -26,7 +26,7 @@ const Checkbox = ({
     <div className={`checkbox-group ${styleClass} ${isRequired}`}>
       {data.map((item) => {
         return (
-          <label className="checkbox-label" key={item.answer_id} htmlFor={item.name}>
+          <label className={`checkbox-label checked-${checkedCheckboxes[item.name]}`} key={item.answer_id} htmlFor={item.name}>
             <input
               className="input-checkbox"
               type="checkbox"
