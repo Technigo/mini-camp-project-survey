@@ -16,6 +16,7 @@ const Slider = ({
     <>
       <input
         type="range"
+        id="range-slider"
         list="rating-steps"
         className="input-slider"
         value={slider}
@@ -23,13 +24,21 @@ const Slider = ({
         max={Object.keys(data).length}
         step="1"
         onChange={(e) => handleChange(questionID, e.target.value)} />
-      <datalist id="rating-steps">
+      <div id="rating-steps">
         {data.map((item) => {
           return (
-            <option key={item.answer_id} value={item.label}>🌟</option>
+            <a
+              href="#"
+              className="option"
+              key={item.answer_id}
+              value={item.label}
+              title={item.answer_id}
+              onClick={(e) => (handleChange(questionID, e.target.title))}>
+                🌟
+            </a>
           )
         })}
-      </datalist>
+      </div>
     </>
   );
 };

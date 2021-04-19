@@ -121,7 +121,7 @@
     },
     {
       "question_id": 6,
-      "question_text": "What is your overall rating for the course?",
+      "question_text": "What is your overall rating of the course?",
       "question_type": "slider",
       "isRequired": "",
       "style": "list",
