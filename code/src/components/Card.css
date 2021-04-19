@@ -59,7 +59,7 @@
 .card .summary-question {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: inline-block;
 }
 .card .summary-reply:first-letter {

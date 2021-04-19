@@ -16,7 +16,7 @@ const Summary = ({
       <h1>Summary</h1>
       <div className="card card-summary">
         <p className="summary-question summary-question-1">
-          {data.questions[0].question_id}. {data.questions[0].question_text}
+          {data.questions[0].question_text}
         </p>
         <p className="summary-reply summary-reply-1">
           {typeof replyCourse !== 'object' ? replyCourse : '-'}
@@ -24,7 +24,7 @@ const Summary = ({
       </div>
       <div className="card card-summary">
         <p className="summary-question summary-question-2">
-          {data.questions[1].question_id}. {data.questions[1].question_text}
+          {data.questions[1].question_text}
         </p>
         <p className="summary-reply summary-reply-2">
           {typeof replyExperience !== 'object' ? replyExperience : '-'}
@@ -32,7 +32,7 @@ const Summary = ({
       </div>
       <div className="card card-summary">
         <p className="summary-question summary-question-3">
-          {data.questions[2].question_id}. {data.questions[2].question_text}
+          {data.questions[2].question_text}
         </p>
         <p className="summary-reply summary-reply-3">
           {typeof replyFavourite !== 'object' ? replyFavourite : '-'}
@@ -40,7 +40,7 @@ const Summary = ({
       </div>
       <div className="card card-summary">
         <p className="summary-question summary-question-4">
-          {data.questions[3].question_id}. {data.questions[3].question_text}
+          {data.questions[3].question_text}
         </p>
         <p className="summary-reply summary-reply-checkbox summary-reply-4">
           {replyImprove ? (
@@ -54,7 +54,7 @@ const Summary = ({
       </div>
       <div className="card card-summary">
         <p className="summary-question summary-question-5">
-          {data.questions[4].question_id}. {data.questions[4].question_text}
+          {data.questions[4].question_text}
         </p>
         <p className="summary-reply summary-reply-5">
           {typeof replyImproveDetails !== 'object' ? replyImproveDetails : '-'}
@@ -62,7 +62,7 @@ const Summary = ({
       </div>
       <div className="card card-summary">
         <p className="summary-question summary-question-6">
-          {data.questions[5].question_id}. {data.questions[5].question_text}
+          {data.questions[5].question_text}
         </p>
         <p className="summary-reply summary-reply-6">
           {typeof replyRating !== 'object' ? replyRating : '-'}
