@@ -9,7 +9,8 @@ const Summary = ({
   replyFavourite,
   replyImprove,
   replyImproveDetails,
-  replyRating
+  replyRating,
+  handleReset
 }) => {
   return (
     <div id={`card-${totalQuestions}`} className="summary-wrapper inactive">
@@ -73,7 +74,7 @@ const Summary = ({
         type="reset"
         name="reset-button"
         styleClass="primary"
-        onClick={() => (window.location.reload())} />
+        onClick={handleReset} />
     </div>
   );
 };

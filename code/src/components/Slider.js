@@ -7,7 +7,7 @@ const Slider = ({
   questionID,
   updateReply
 }) => {
-  const [slider, setSlider] = useState(0);
+  const [slider, setSlider] = useState(1);
   const handleChange = (id, value) => {
     setSlider(value);
     updateReply(id, value);

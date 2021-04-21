@@ -13,7 +13,7 @@ export const App = () => {
   const [replyFavourite, updateFavourite] = useState([]);
   const [replyImprove, updateImprove] = useState([]);
   const [replyImproveDetails, updateImproveDetails] = useState([]);
-  const [replyRating, updateRating] = useState([]);
+  const [replyRating, updateRating] = useState(1);
   const [showIntro, updateShowIntro] = useState(true);
   const [surveyOver, updateSurveyOver] = useState(false);
   const [currentQuestion, updateCurrentQuestion] = useState(1);
@@ -35,17 +35,21 @@ export const App = () => {
     }
   }
   useEffect(() => {
-    if (!showIntro) {
-      if (currentQuestion <= totalQuestions) {
-        document.getElementById(`card-${currentQuestion}`).classList.remove('inactive');
-      } else {
-        document.getElementById('card-summary').classList.remove('inactive');
-      }
-    }
+    if (!showIntro) document.getElementById(`card-${currentQuestion}`).classList.remove('inactive');
   });
   function handleSubmit(e) {
     e.preventDefault();
     updateSurveyOver(true);
+  }
+  function handleReset() {
+    updateSurveyOver(false);
+    updateCurrentQuestion(1);
+    updateCourse([]);
+    updateExperience([]);
+    updateFavourite([]);
+    updateImprove([]);
+    updateImproveDetails([]);
+    updateRating(1);
   }
   return (
     <div className="App">
@@ -64,7 +68,8 @@ export const App = () => {
             replyFavourite={replyFavourite}
             replyImprove={replyImprove}
             replyImproveDetails={replyImproveDetails}
-            replyRating={replyRating} />
+            replyRating={replyRating}
+            handleReset={handleReset} />
         ) : (
           <>
             {showIntro ? (

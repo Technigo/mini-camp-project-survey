@@ -39,6 +39,12 @@
   top: 55px;
   z-index: 1;
   position: relative;
+  opacity: 1;
+  transition: all .5s ease;
+}
+.summary-wrapper.inactive {
+  top: 85px;
+  opacity: 0;
 }
 .summary-wrapper h1 {
   margin-top: 0;
