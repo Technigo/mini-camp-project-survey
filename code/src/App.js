@@ -73,26 +73,24 @@ export const App = () => {
             {showIntro ? (
               <Intro updateShowIntro={updateShowIntro} />
             ) : (
-              <>
-                <form className="form" onSubmit={handleSubmit}>
-                  {questionData.map((question) => {
-                    return (
-                      <Card
-                        key={question.question_id}
-                        questionID={question.question_id}
-                        question={question.question_text}
-                        questionType={question.question_type}
-                        answerOptions={question.answer_options}
-                        styleClass={question.style}
-                        isRequired={question.isRequired}
-                        updateReply={storeReply}
-                        totalQuestions={totalQuestions}
-                        currentQuestion={currentQuestion}
-                        updateCurrentQuestion={updateCurrentQuestion} />
-                    );
-                  })}
-                </form>
-              </>
+              <form className="form" onSubmit={handleSubmit}>
+                {questionData.map((question) => {
+                  return (
+                    <Card
+                      key={question.question_id}
+                      questionID={question.question_id}
+                      question={question.question_text}
+                      questionType={question.question_type}
+                      answerOptions={question.answer_options}
+                      styleClass={question.style}
+                      isRequired={question.isRequired}
+                      updateReply={storeReply}
+                      totalQuestions={totalQuestions}
+                      currentQuestion={currentQuestion}
+                      updateCurrentQuestion={updateCurrentQuestion} />
+                  );
+                })}
+              </form>
             )}
           </>
         )}
