@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Dropdown.css';
 
-const Dropdown = ({ questionID, data, name, updateReply }) => {
+const Dropdown = ({ questionID, data, updateReply }) => {
   const handleChange = (e) => {
     updateReply(questionID, e.target.value);
   }
@@ -10,8 +10,9 @@ const Dropdown = ({ questionID, data, name, updateReply }) => {
     <div className={`select-wrapper select-wrapper-${questionID}`}>
       <select
         className="select"
-        name={name}
+        name={data[0].label}
         onChange={handleChange}
+        aria-label={data[0].label}
         defaultValue={data[0].label}>
         {data.map((item) => {
           if (item.isDisabled) {

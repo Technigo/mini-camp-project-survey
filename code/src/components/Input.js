@@ -9,7 +9,6 @@ const Input = ({
   placeholder,
   styleClass,
   isDisabled,
-  isRequired,
   updateReply
 }) => {
   const [inputValue, setInput] = useState(value);
@@ -25,8 +24,7 @@ const Input = ({
       name={type}
       placeholder={placeholder}
       onChange={handleChange}
-      disabled={isDisabled}
-      required={isRequired} />
+      disabled={isDisabled} />
   );
 };
 export default Input;

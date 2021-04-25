@@ -83,7 +83,6 @@ export const App = () => {
                       questionType={question.question_type}
                       answerOptions={question.answer_options}
                       styleClass={question.style}
-                      isRequired={question.isRequired}
                       updateReply={storeReply}
                       totalQuestions={totalQuestions}
                       currentQuestion={currentQuestion}

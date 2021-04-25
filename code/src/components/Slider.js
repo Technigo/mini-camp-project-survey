@@ -19,6 +19,7 @@ const Slider = ({
         id="range-slider"
         list="rating-steps"
         className="input-slider"
+        aria-label="range-slider"
         value={slider}
         min="1"
         max={Object.keys(data).length}

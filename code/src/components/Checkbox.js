@@ -6,7 +6,6 @@ const Checkbox = ({
   questionID,
   data,
   styleClass,
-  isRequired,
   updateReply
 }) => {
   const [checkedCheckboxes, setCheckbox] = useState({});
@@ -23,7 +22,7 @@ const Checkbox = ({
     updateReply(questionID, checkedCheckboxes)
   });
   return (
-    <div className={`checkbox-group ${styleClass} ${isRequired}`}>
+    <div className={`checkbox-group ${styleClass}`}>
       {data.map((item) => {
         return (
           <label className={`checkbox-label checked-${checkedCheckboxes[item.name]}`} key={item.answer_id} htmlFor={item.name}>

@@ -18,7 +18,6 @@ const Card = ({
   questionType,
   answerOptions,
   styleClass,
-  isRequired,
   updateReply,
   totalQuestions,
   currentQuestion,
@@ -30,38 +29,29 @@ const Card = ({
   if (questionType === 'input') {
     answers = <Input
       questionID={questionID}
-      value=""
-      placeholder=""
       type="text"
       styleClass="primary"
-      isRequired={isRequired}
       updateReply={updateReply} />
   } else if (questionType === 'radio') {
     answers = <Radio
       questionID={questionID}
       data={answerOptions}
       styleClass={styleClass}
-      isRequired={isRequired}
       updateReply={updateReply} />
   } else if (questionType === 'checkbox') {
     answers = <Checkbox
       questionID={questionID}
       data={answerOptions}
       styleClass={styleClass}
-      isRequired={isRequired}
       updateReply={updateReply} />
   } else if (questionType === 'dropdown') {
     answers = <Dropdown
       questionID={questionID}
       data={answerOptions}
-      name="select"
       updateReply={updateReply} />
   } else if (questionType === 'textarea') {
     answers = <Textarea
       questionID={questionID}
-      value=""
-      placeholder=""
-      isRequired={isRequired}
       updateReply={updateReply} />
   } else if (questionType === 'slider') {
     answers = <Slider
@@ -84,8 +74,8 @@ const Card = ({
         {answers}
       </div>
       {(currentQuestion === totalQuestions)
-        ? <Button value="Submit" type="submit" name="submit-button" styleClass="primary" />
-        : <Button value="Continue" type="continue" name="continue-button" styleClass="primary" onClick={handleContinue} />}
+        ? <Button value="Submit" type="submit" name="submit-button" styleClass="primary" aria-label="submit" />
+        : <Button value="Continue" type="continue" name="continue-button" styleClass="primary" aria-label="continue" onClick={handleContinue} />}
     </div>
   );
 };

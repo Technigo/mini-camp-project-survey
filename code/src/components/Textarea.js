@@ -6,7 +6,6 @@ const Textarea = ({
   questionID,
   value,
   isDisabled,
-  isRequired,
   updateReply
 }) => {
   const [textValue, setTextValue] = useState(value);
@@ -20,9 +19,9 @@ const Textarea = ({
       className="textarea"
       id="textarea"
       name="textarea"
+      aria-label="textarea"
       onChange={handleChange}
-      disabled={isDisabled}
-      required={isRequired} />
+      disabled={isDisabled} />
   );
 };
 export default Textarea;

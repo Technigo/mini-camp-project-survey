@@ -6,7 +6,6 @@ const Radio = ({
   data,
   styleClass,
   questionID,
-  isRequired,
   updateReply
 }) => {
   const [radio, setRadio] = useState(0);
@@ -15,10 +14,10 @@ const Radio = ({
     updateReply(questionID, label);
   };
   return (
-    <div className={`radio-group ${styleClass} ${isRequired}`}>
+    <div className={`radio-group ${styleClass}`}>
       {data.map((item) => {
         return (
-          <label className={`radio-label checked-${radio === item.answer_id}`} key={item.answer_id} htmlFor={item.answer_id}>
+          <label className={`radio-label checked-${radio === item.answer_id}`} key={item.answer_id} htmlFor={item.answer_id} aria-label={item.label}>
             <input
               className="input-radio"
               type="radio"

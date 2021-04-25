@@ -18,6 +18,7 @@ const Button = ({
       name={name}
       className={`button ${styleClass}`}
       disabled={isDisabled}
+      aria-label={name}
       onClick={onClick}>
       {value}
     </button>
