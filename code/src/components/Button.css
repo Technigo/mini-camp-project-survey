@@ -15,7 +15,8 @@
   text-transform: uppercase;
   letter-spacing: 1.1px;
 }
-.button:hover:not(:disabled) {
+.button:hover:not(:disabled),
+.button:focus:not(:disabled) {
   background-color: #1567d3;
 }
 .button:active:not(:disabled) {

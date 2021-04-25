@@ -40,6 +40,7 @@ body {
   top: 20px;
   z-index: 100;
   width: 100px;
+  outline: none;
   transition: all .5s ease;
 }
 .intro {

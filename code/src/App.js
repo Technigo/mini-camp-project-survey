@@ -54,7 +54,7 @@ export const App = () => {
   return (
     <div className="App">
       {!showIntro
-        ? <a href="/"><img className="survey-logo" src="assets/technigo-logo.png" width="100" alt="logo" /></a>
+        ? <a href="/"><img className="survey-logo" src="assets/technigo-logo.png" width="100" alt="logo" tabIndex="-1" /></a>
         : null}
       <section className="survey">
         {surveyOver ? (
