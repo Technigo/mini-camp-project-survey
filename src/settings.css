@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 24px auto;
+  margin-bottom: 3em;
+  border-radius: 8px;
+  padding: 1.5em;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  background-color: #5A3E85;
+  color: #fff;
+  background-image: url('./twitch-dudes.png');
+  background-position: 0px 0px;
+
+    animation: animatedBackground2 10s linear infinite;
+    -moz-animation: animatedBackground2 10s linear infinite;
+    -webkit-animation: animatedBackground2 10s linear infinite;
+    -ms-animation: animatedBackground2 10s linear infinite;
+    -o-animation: animatedBackground2 10s linear infinite;
+}
+
+@keyframes animatedBackground2 {
+  0% { background-position: 0 0; }
+  100% { background-position: 96px 0; }
+}
+@-moz-keyframes animatedBackground2 {
+  0% { background-position: 0 0; }
+  100% { background-position: 96px 0; }
+}
+@-webkit-keyframes animatedBackground2 {
+  0% { background-position: 0 0; }
+  100% { background-position: 96px 0; }
+}
+@-ms-keyframes animatedBackground2 {
+  0% { background-position: 0 0; }
+  100% { background-position: 96px 0; }
+}
+@-o-keyframes animatedBackground2 {
+  0% { background-position: 0 0; }
+  100% { background-position: 96px 0; }
+}
+
+/* Mobile responsiveness  */ 
+
+
+
+@media only screen and (max-width: 700px) {
+  body {
+    font-size: 14px;
+  }
+
+  body .radiogroup label {
+    min-width: 80px;
+    padding: 0.5em 1em;
+  }
+
+  body .word {
+    font-size: 2em;
+  }
+
+}
