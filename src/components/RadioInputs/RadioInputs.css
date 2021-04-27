@@ -1,0 +1,49 @@
+.radiogroup {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.radiogroup input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radiogroup label {
+  backdrop-filter: blur(4px);
+  display: block;
+  padding: 1em 2em;
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  border: 2px dashed rgba(255,255,255,0.5);
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  min-width: 180px;
+  margin-bottom: 1em;
+  transition: all 200ms;
+  color: rgba(255,255,255,0.7);
+}
+
+.radiogroup label.is-checked {
+  background-color: #ffdf02;
+  color: #3f1c4a;
+  border: 2px solid rgba(255,255,255,0.5);
+  box-shadow: 0 16px 32px 12px rgba(255, 246, 166, 0.5);
+}
+
+
+.radiogroup label:hover {
+  border-color: #ffdf02;
+  transform: scale(1.05);
+  color: #ffdf02;
+}
+
+
+.radiogroup label.is-checked:hover {
+  background-color: #ffdf02;
+  color: #3f1c4a;
+  transform: scale(1);
+}

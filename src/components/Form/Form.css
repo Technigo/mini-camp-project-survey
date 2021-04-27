@@ -1,0 +1,24 @@
+
+form input[type="submit"] {
+  font-size: 2em;
+  margin-top: 1em;
+  width: 100%;
+  padding: 0.75em 2em;
+  border-radius: 16px;
+  background-color: rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  border: none;
+  background-color: #d0b8f3;
+  box-shadow: 0 24px 24px 24px rgba(0, 0, 0, 0.3);
+  transition: all 300ms;
+  color: #3f1c4a;
+}
+
+form input[type="submit"]:disabled {
+  background-color: rgba(255,255,255,0.1);
+  cursor: not-allowed;
+  color: rgba(255,255,255,0.3);
+  border: none;
+  box-shadow: none;
+}
