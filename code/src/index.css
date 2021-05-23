@@ -1,13 +1,304 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
 body {
+  height: 100%;
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background: #FEF7E6;
+  font-size: 18px;
+  overflow-y: scroll;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#root {
+  height: 100%;
+}
+.App {
+  width: 100%;
+  height: 100%;
+}
+.survey {
+  width: 95%;
+  max-width: 700px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.survey-logo {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 100;
+  width: 100px;
+  outline: none;
+  transition: all .5s ease;
+}
+.intro {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all .5s ease;
+  z-index: 10;
+  text-align: center;
+}
+.intro-title {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 45px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.intro-logo {
+  width: 200px;
+}
+.intro-title span:last-of-type {
+  font-size: 29px;
+}
+p {
+  margin: 0;
+}
+.circle-inner {
+  width: 95%;
+  max-width: 700px;
+  height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle-outer {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.circle {
+  position: fixed;
+  shape-outside: circle();
+  clip-path: circle();
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+.circle-1 {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to top right, #f1ba8d, #FD987D);
+  left: -10%;
+  top: 29%;
+  z-index: 1;
+  animation-name: floating-1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-2 {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to top right, #bedeff, #78b9eb);
+  left: -11%;
+  top: 41%;
+  z-index: 2;
+  animation-name: floating-2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-3 {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to top right, #f9c8fe, #d87fbc);
+  right: -11%;
+  top: 41%;
+  z-index: 12;
+  animation-name: floating-2;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: absolute;
+}
+.circle-4 {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to top right, #d3fffc, #6cbead);
+  right: -10%;
+  top: 45%;
+  z-index: 1;
+  animation-name: floating-1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-5 {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to top right, #f9c8fe, #d87fbc);
+  left: -6%;
+  bottom: -12%;
+  z-index: 1;
+  animation-name: floating-1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-6 {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to top right, #8df1ea, #457dc5);
+  left: 100px;
+  bottom: -20px;
+  z-index: 1;
+  animation-name: floating-3;
+  animation-duration: 10s2;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-7 {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to top right, #f1ba8d, #FD987D);
+  right: -6%;
+  top: -12%;
+  z-index: 1;
+  animation-name: floating-1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-8 {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to top right, #8df1ea, #457dc5);
+  right: 100px;
+  top: -20px;
+  z-index: 1;
+  animation-name: floating-3;
+  animation-duration: 10s2;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-9 {
+  height: 140px;
+  width: 140px;
+  background: linear-gradient(to top right, #c8fef0, #7fd8bc);
+  left: -30px;
+  top: 150px;
+  z-index: 1;
+  animation-name: floating-1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.circle-10 {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to top right, #f1ba8d, #FD987D);
+  right: 10%;
+  bottom: -30px;
+  z-index: 1;
+  animation-name: floating-3;
+  animation-duration: 10s2;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating-1 {
+  0% {
+    transform: translate(0,  0px);
+    transform: scale(1);
+  }
+  50%  {
+    transform: translate(5px, 10px);
+    transform: scale(1.1);
+  }
+  100%   {
+    transform: translate(0, -0px);
+    transform: scale(1);
+  }    
+}
+@keyframes floating-2 {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(-10px, 15px); }
+  100%   { transform: translate(0, -0px); }    
+}
+@keyframes floating-3 {
+  0% {
+    transform: translate(0,  0px);
+    transform: scale(1);
+  }
+  50%  {
+    transform: translate(-15px, 15px);
+    transform: scale(1);
+  }
+  100%   {
+    transform: translate(0, -0px);
+    transform: scale(1);
+  }    
+}
+@media only screen and (max-width: 970px) {
+  .survey-logo {
+    display: none;
+  }
+}
+@media only screen and (max-width: 560px) {
+  body {
+    overflow-y: scroll;
+  }
+  .card h1 {
+    font-size: 26px !important;
+  }
+  .intro-logo {
+    width: 160px;
+  }
+  .intro-title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .intro-title span:last-of-type {
+    font-size: 18px;
+  }
+  .survey {
+    width: 90%;
+  }
+  .survey-logo {
+    display: none;
+  }
+  .card {
+    top: 20px !important;
+    left: auto !important;
+    transform: none !important;
+  }
+  .survey .circle-3 {
+    right: -29%;
+    display: none;
+  }
+  .checkbox-group.row {
+    width: 100% !important;
+    display: grid !important;
+  }
+  .summary-wrapper {
+    margin-top: 0 !important;
+  }
+  .summary-wrapper h1 {
+    margin-bottom: 0;
+  }
+  .summary-wrapper .button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }

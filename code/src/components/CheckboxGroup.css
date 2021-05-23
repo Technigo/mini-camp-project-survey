@@ -1,0 +1,48 @@
+.checkbox-group {
+  cursor: pointer;
+  margin: auto;
+}
+.checkbox-group.list {
+  text-align: left;
+  display: grid;
+}
+.checkbox-group.row {
+  display: inline-block;
+}
+.checkbox-group.list .checkbox-label {
+  float: left;
+  width: 100%;
+  padding: 8px;
+}
+.checkbox-group.row .checkbox-label {
+  display: inline-block;
+  margin-right: 10px;
+}
+.checkbox-label {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 8px;
+  border: 2px solid rgb(228, 228, 228);
+  margin-bottom: 10px;
+}
+.checkbox-label.checked-true {
+  color: #000;
+  border: 2px solid #2279EB;
+  background: #f3f8ff;
+}
+.checkbox-label span {
+  margin-right: 10px;
+}
+.checkbox-label .input-checkbox {
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 0;
+}
+.input-checkbox:checked + span {
+  color: #000;
+}
+.checkbox-label:hover {
+  color: #000;
+  border: 2px solid #2279EB;
+  background: #f3f8ff;
+}

@@ -1,0 +1,157 @@
+{
+  "questions": [
+    {
+      "question_id": 1,
+      "question_text": "Which boot camp have you attended?",
+      "question_type": "dropdown",
+      "isRequired": "required",
+      "answer_options": [
+        {
+          "answer_id": 0,
+          "value": "0",
+          "label": "Choose boot camp",
+          "isDisabled": "disabled"
+        },
+        {
+          "answer_id": 1,
+          "value": "1",
+          "label": "6 Week Mini Camp - Start with web development (Beginner)"
+        },
+        {
+          "answer_id": 2,
+          "value": "2",
+          "label": "9 Week Mini Camp - Learn to use JavaScript and API:s (Intermediate)"
+        },
+        {
+          "answer_id": 3,
+          "value": "3",
+          "label": "12 Week Mini Camp - Build interfaces with React (Advanced)"
+        },
+        {
+          "answer_id": 4,
+          "value": "4",
+          "label": "24 Week Boot Camp - Web development in sprints (Advanced)"
+        },
+        {
+          "answer_id": 5,
+          "value": "5",
+          "label": "Technigo Alumni"
+        }
+      ]
+    },
+    {
+      "question_id": 2,
+      "question_text": "How would you rate your experience in web development?",
+      "question_type": "radio",
+      "isRequired": "required",
+      "style": "list",
+      "answer_options": [
+        {
+          "answer_id": 1,
+          "name": "experience",
+          "label": "Not very experienced 👶"
+        },
+        {
+          "answer_id": 2,
+          "name": "experienced",
+          "label": "I can google 🔍"
+        },
+        {
+          "answer_id": 3,
+          "name": "experience",
+          "label": "I’m feeling confident 🔥"
+        },
+        {
+          "answer_id": 4,
+          "name": "experience",
+          "label": "I’m now working as a developer 💪"
+        }
+      ]
+    },
+    {
+      "question_id": 3,
+      "question_text": "What have so far been your favourite thing about the course?",
+      "question_type": "textarea",
+      "isRequired": "required"
+    },
+    {
+      "question_id": 4,
+      "question_text": "Select one or multiple things that could be improved with the course",
+      "question_type": "checkbox",
+      "isRequired": "required",
+      "style": "row",
+      "answer_options": [
+        {
+          "answer_id": 1,
+          "name": "👋 Introduction Meeting",
+          "label": "Introduction Meeting 👋"
+        },
+        {
+          "answer_id": 2,
+          "name": "💼 Project Brief",
+          "label": "Project Brief 💼"
+        },
+        {
+          "answer_id": 3,
+          "name": "💬 1on1",
+          "label": "1on1 💬"
+        },
+        {
+          "answer_id": 4,
+          "name": "💁 Q&A",
+          "label": "Q&A 💁"
+        },
+        {
+          "answer_id": 5,
+          "name": "📝 Projects",
+          "label": "Projects 📝"
+        },
+        {
+          "answer_id": 6,
+          "name": "⛹ Weekly Exercises",
+          "label": "Weekly Exercises ⛹"
+        }
+      ]
+    },
+    {
+      "question_id": 5,
+      "question_text": "Care to explain in more detail what can be improved?",
+      "question_type": "textarea",
+      "isRequired": ""
+    },
+    {
+      "question_id": 6,
+      "question_text": "What is your overall rating of the course?",
+      "question_type": "slider",
+      "isRequired": "",
+      "style": "list",
+      "answer_options": [
+        {
+          "answer_id": 1,
+          "name": "rating",
+          "label": "🌟"
+        },
+        {
+          "answer_id": 2,
+          "name": "rating",
+          "label": "🌟🌟"
+        },
+        {
+          "answer_id": 3,
+          "name": "rating",
+          "label": "🌟🌟🌟"
+        },
+        {
+          "answer_id": 4,
+          "name": "rating",
+          "label": "🌟🌟🌟🌟"
+        },
+        {
+          "answer_id": 5,
+          "name": "rating",
+          "label": "🌟🌟🌟🌟🌟"
+        }
+      ]
+    }
+  ]
+}
