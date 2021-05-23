@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import './Checkbox.css';
+import './CheckboxGroup.css';
 
-const Checkbox = ({
+const CheckboxGroup = ({
   questionID,
   data,
   styleClass,
-  updateReply
+  setReply
 }) => {
   const [checkedCheckboxes, setCheckbox] = useState({});
   const handleChange = (e) => {
@@ -19,7 +19,7 @@ const Checkbox = ({
     );
   };
   useEffect(() => {
-    updateReply(questionID, checkedCheckboxes)
+    setReply(questionID, checkedCheckboxes)
   });
   return (
     <div className={`checkbox-group ${styleClass}`}>
@@ -40,4 +40,4 @@ const Checkbox = ({
     </div>
   );
 };
-export default Checkbox;
+export default CheckboxGroup;

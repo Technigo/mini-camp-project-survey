@@ -5,12 +5,12 @@ import './Slider.css';
 const Slider = ({
   data,
   questionID,
-  updateReply
+  setReply
 }) => {
   const [slider, setSlider] = useState(1);
   const handleChange = (id, value) => {
     setSlider(value);
-    updateReply(id, value);
+    setReply(id, value);
   }
   return (
     <>
@@ -25,7 +25,7 @@ const Slider = ({
         max={Object.keys(data).length}
         step="1"
         onChange={(e) => handleChange(questionID, e.target.value)} />
-      <div id="rating-steps">
+      <div className="rating-steps">
         {data.map((item) => {
           return (
             <a

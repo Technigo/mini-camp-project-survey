@@ -2,9 +2,9 @@ import React from 'react';
 
 import './Dropdown.css';
 
-const Dropdown = ({ questionID, data, updateReply }) => {
+const Dropdown = ({ questionID, data, setReply }) => {
   const handleChange = (e) => {
-    updateReply(questionID, e.target.value);
+    setReply(questionID, e.target.value);
   }
   return (
     <div className={`select-wrapper select-wrapper-${questionID}`}>

@@ -6,12 +6,12 @@ const Textarea = ({
   questionID,
   value,
   isDisabled,
-  updateReply
+  setReply
 }) => {
   const [textValue, setTextValue] = useState(value);
   const handleChange = (e) => {
     setTextValue(e.target.value);
-    updateReply(questionID, e.target.value);
+    setReply(questionID, e.target.value);
   }
   return (
     <textarea

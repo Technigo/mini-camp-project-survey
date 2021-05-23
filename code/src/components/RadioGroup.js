@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-import './Radio.css';
+import './RadioGroup.css';
 
-const Radio = ({
+const RadioGroup = ({
   data,
   styleClass,
   questionID,
-  updateReply
+  setReply
 }) => {
   const [radio, setRadio] = useState(0);
   const handleChange = (id, label) => {
     setRadio(id);
-    updateReply(questionID, label);
+    setReply(questionID, label);
   };
   return (
     <div className={`radio-group ${styleClass}`}>
@@ -32,4 +32,4 @@ const Radio = ({
     </div>
   );
 };
-export default Radio;
+export default RadioGroup;

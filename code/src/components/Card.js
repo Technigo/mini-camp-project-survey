@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Checkbox from './Checkbox';
-import Radio from './Radio';
+import CheckboxGroup from './CheckboxGroup';
+import RadioGroup from './RadioGroup';
 import Input from './Input';
 import Button from './Button';
 import Dropdown from './Dropdown';
@@ -10,54 +10,54 @@ import Slider from './Slider';
 
 import './Card.css';
 
-let answers;
-
 const Card = ({
   questionID,
   question,
   questionType,
   answerOptions,
   styleClass,
-  updateReply,
+  setReply,
   totalQuestions,
   currentQuestion,
-  updateCurrentQuestion
+  setCurrentQuestion
 }) => {
   function handleContinue() {
-    updateCurrentQuestion(currentQuestion + 1);
+    setCurrentQuestion(currentQuestion + 1);
   }
-  if (questionType === 'input') {
-    answers = <Input
-      questionID={questionID}
-      type="text"
-      styleClass="primary"
-      updateReply={updateReply} />
-  } else if (questionType === 'radio') {
-    answers = <Radio
-      questionID={questionID}
-      data={answerOptions}
-      styleClass={styleClass}
-      updateReply={updateReply} />
-  } else if (questionType === 'checkbox') {
-    answers = <Checkbox
-      questionID={questionID}
-      data={answerOptions}
-      styleClass={styleClass}
-      updateReply={updateReply} />
-  } else if (questionType === 'dropdown') {
-    answers = <Dropdown
-      questionID={questionID}
-      data={answerOptions}
-      updateReply={updateReply} />
-  } else if (questionType === 'textarea') {
-    answers = <Textarea
-      questionID={questionID}
-      updateReply={updateReply} />
-  } else if (questionType === 'slider') {
-    answers = <Slider
-      questionID={questionID}
-      data={answerOptions}
-      updateReply={updateReply} />
+  const generateQuestionControl = () => {
+    if (questionType === 'input') {
+      return <Input
+        questionID={questionID}
+        type="text"
+        styleClass="primary"
+        setReply={setReply} />
+    } else if (questionType === 'radio') {
+      return <RadioGroup
+        questionID={questionID}
+        data={answerOptions}
+        styleClass={styleClass}
+        setReply={setReply} />
+    } else if (questionType === 'checkbox') {
+      return <CheckboxGroup
+        questionID={questionID}
+        data={answerOptions}
+        styleClass={styleClass}
+        setReply={setReply} />
+    } else if (questionType === 'dropdown') {
+      return <Dropdown
+        questionID={questionID}
+        data={answerOptions}
+        setReply={setReply} />
+    } else if (questionType === 'textarea') {
+      return <Textarea
+        questionID={questionID}
+        setReply={setReply} />
+    } else if (questionType === 'slider') {
+      return <Slider
+        questionID={questionID}
+        data={answerOptions}
+        setReply={setReply} />
+    }
   }
 
   return (
@@ -71,11 +71,11 @@ const Card = ({
         <h1>{question}</h1>
       </div>
       <div className="answers">
-        {answers}
+        {generateQuestionControl()}
       </div>
       {(currentQuestion === totalQuestions)
         ? <Button value="Submit" type="submit" name="submit-button" styleClass="primary" aria-label="submit" />
-        : <Button value="Continue" type="continue" name="continue-button" styleClass="primary" aria-label="continue" onClick={handleContinue} />}
+        : <Button value="Continue" name="continue-button" styleClass="primary" aria-label="continue" onClick={handleContinue} />}
     </div>
   );
 };

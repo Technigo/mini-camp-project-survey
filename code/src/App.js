@@ -4,34 +4,36 @@ import data from './data.json';
 import Intro from './components/Intro';
 import Summary from './components/Summary';
 import Card from './components/Card';
+import Logo from './components/Logo';
+import Circles from './components/Circles';
 
 import './index.css';
 
 export const App = () => {
-  const [replyCourse, updateCourse] = useState([]);
-  const [replyExperience, updateExperience] = useState([]);
-  const [replyFavourite, updateFavourite] = useState([]);
-  const [replyImprove, updateImprove] = useState([]);
-  const [replyImproveDetails, updateImproveDetails] = useState([]);
-  const [replyRating, updateRating] = useState(1);
-  const [showIntro, updateShowIntro] = useState(true);
-  const [surveyOver, updateSurveyOver] = useState(false);
-  const [currentQuestion, updateCurrentQuestion] = useState(1);
-  const questionData = data.questions.filter((item) => item.question_id === currentQuestion);
+  const [replyCourse, setCourse] = useState('');
+  const [replyExperience, setExperience] = useState('');
+  const [replyFavourite, setFavourite] = useState('');
+  const [replyImprove, setImprove] = useState([]);
+  const [replyImproveDetails, setImproveDetails] = useState('');
+  const [replyRating, setRating] = useState(1);
+  const [showIntro, setShowIntro] = useState(true);
+  const [surveyOver, setSurveyOver] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(1);
+  const questionData = data.questions.find((item) => item.question_id === currentQuestion);
   const totalQuestions = data.questions.length;
-  function storeReply(questionID, reply) {
+  const storeReply = (questionID, reply) => {
     if (questionID === 1) {
-      updateCourse(reply)
+      setCourse(reply)
     } else if (questionID === 2) {
-      updateExperience(reply)
+      setExperience(reply)
     } else if (questionID === 3) {
-      updateFavourite(reply)
+      setFavourite(reply)
     } else if (questionID === 4) {
-      updateImprove(reply)
+      setImprove(reply)
     } else if (questionID === 5) {
-      updateImproveDetails(reply)
+      setImproveDetails(reply)
     } else if (questionID === 6) {
-      updateRating(reply)
+      setRating(reply)
     }
   }
   useEffect(() => {
@@ -39,23 +41,21 @@ export const App = () => {
   });
   function handleSubmit(e) {
     e.preventDefault();
-    updateSurveyOver(true);
+    setSurveyOver(true);
   }
   function handleReset() {
-    updateSurveyOver(false);
-    updateCurrentQuestion(1);
-    updateCourse([]);
-    updateExperience([]);
-    updateFavourite([]);
-    updateImprove([]);
-    updateImproveDetails([]);
-    updateRating(1);
+    setSurveyOver(false);
+    setCurrentQuestion(1);
+    setCourse([]);
+    setExperience([]);
+    setFavourite([]);
+    setImprove([]);
+    setImproveDetails([]);
+    setRating(1);
   }
   return (
     <div className="App">
-      {!showIntro
-        ? <a href="/"><img className="survey-logo" src="assets/technigo-logo.png" width="100" alt="logo" tabIndex="-1" /></a>
-        : null}
+      {!showIntro && <Logo />}
       <section className="survey">
         {surveyOver ? (
           <Summary
@@ -71,43 +71,26 @@ export const App = () => {
         ) : (
           <>
             {showIntro ? (
-              <Intro updateShowIntro={updateShowIntro} />
+              <Intro setShowIntro={setShowIntro} />
             ) : (
               <form className="form" onSubmit={handleSubmit}>
-                {questionData.map((question) => {
-                  return (
-                    <Card
-                      key={question.question_id}
-                      questionID={question.question_id}
-                      question={question.question_text}
-                      questionType={question.question_type}
-                      answerOptions={question.answer_options}
-                      styleClass={question.style}
-                      updateReply={storeReply}
-                      totalQuestions={totalQuestions}
-                      currentQuestion={currentQuestion}
-                      updateCurrentQuestion={updateCurrentQuestion} />
-                  );
-                })}
+                <Card
+                  key={questionData.question_id}
+                  questionID={questionData.question_id}
+                  question={questionData.question_text}
+                  questionType={questionData.question_type}
+                  answerOptions={questionData.answer_options}
+                  styleClass={questionData.style}
+                  setReply={storeReply}
+                  totalQuestions={totalQuestions}
+                  currentQuestion={currentQuestion}
+                  setCurrentQuestion={setCurrentQuestion} />
               </form>
             )}
           </>
         )}
       </section>
-      <div className="circle-inner">
-        <div className="circle circle-1" />
-        <div className="circle circle-2" />
-        <div className="circle circle-3" />
-        <div className="circle circle-4" />
-      </div>
-      <div className="circle-outer">
-        <div className="circle circle-5" />
-        <div className="circle circle-6" />
-        <div className="circle circle-7" />
-        <div className="circle circle-8" />
-        <div className="circle circle-9" />
-        <div className="circle circle-10" />
-      </div>
+      <Circles />
     </div>
   );
 }

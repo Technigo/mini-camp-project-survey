@@ -2,35 +2,35 @@
   width: 100%;
   cursor: pointer;
 }
-#rating-steps {
+.rating-steps {
   display: inline-block;
   position: relative;
   top: 0;
   width: 100%;
 }
-#rating-steps .option {
+.rating-steps .option {
   width: 20px;
   position: absolute;
   left: 0;
   transform: translate(-50%, -50%);
   text-decoration: none;
 }
-#rating-steps .option:first-child {
+.rating-steps .option:first-child {
   left: 0%;
   margin-left: 10px;
 }
-#rating-steps .option:nth-child(2) {
+.rating-steps .option:nth-child(2) {
   left: 25%;
   margin-left: 4px;
 }
-#rating-steps .option:nth-child(3) {
+.rating-steps .option:nth-child(3) {
   left: 50%;
 }
-#rating-steps .option:nth-child(4) {
+.rating-steps .option:nth-child(4) {
   left: 75%;
   margin-left: -4px;
 }
-#rating-steps .option:last-child {
+.rating-steps .option:last-child {
   left: 100%;
   margin-left: -7px;
 }

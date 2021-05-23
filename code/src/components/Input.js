@@ -9,12 +9,12 @@ const Input = ({
   placeholder,
   styleClass,
   isDisabled,
-  updateReply
+  setReply
 }) => {
   const [inputValue, setInput] = useState(value);
   const handleChange = (e) => {
     setInput(e.target.value);
-    updateReply(questionID, e.target.value);
+    setReply(questionID, e.target.value);
   }
   return (
     <input

@@ -10,11 +10,10 @@ const Button = ({
   isDisabled,
   onClick
 }) => {
-  /* eslint-disable react/button-has-type */
   return (
     <button
       value={value}
-      type={type}
+      type={type ? 'submit' : 'button'}
       name={name}
       className={`button ${styleClass}`}
       disabled={isDisabled}
@@ -23,6 +22,5 @@ const Button = ({
       {value}
     </button>
   );
-  /* eslint-enable react/button-has-type */
 };
 export default Button;
